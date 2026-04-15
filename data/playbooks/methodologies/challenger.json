@@ -1,0 +1,11 @@
+{
+  "name": "Challenger Sale",
+  "description": "Teach, Tailor, Take Control",
+  "dimensions": [
+    {"key": "commercial_teaching", "label": "Commercial Teaching", "description": "Did the rep share a unique insight that reframes how the prospect thinks about their problem?", "weight": 1.2},
+    {"key": "tailoring", "label": "Tailoring the Message", "description": "Did the rep adapt their pitch to the prospect's specific role, industry, and priorities?", "weight": 1.0},
+    {"key": "taking_control", "label": "Taking Control", "description": "Did the rep assertively guide the conversation, push back constructively, and maintain momentum?", "weight": 1.0},
+    {"key": "constructive_tension", "label": "Constructive Tension", "description": "Did the rep respectfully challenge the prospect's assumptions to create urgency?", "weight": 1.0},
+    {"key": "value_articulation", "label": "Value Articulation", "description": "Did the rep clearly connect their solution to quantified business outcomes?", "weight": 1.0}
+  ]
+}

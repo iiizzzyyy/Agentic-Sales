@@ -1,0 +1,41 @@
+---
+title: "End-to-End Data Flow: Rep Asks for Meeting Prep"
+---
+sequenceDiagram
+    participant Rep as Sales Rep
+    participant Slack as Slack
+    participant Bolt as Bolt SDK
+    participant Router as Router (Haiku)
+    participant Coach as Coach (Claude Sonnet)
+    participant RAG as RAG Pipeline (Voyage + Qdrant)
+    participant HS as HubSpot MCP
+    participant Web as Web Search MCP
+    participant BQ as BigQuery MCP
+
+    Rep->>Slack: /coach prep for QBR with Acme Corp
+    Slack->>Bolt: slash_command event
+    Bolt->>Router: Classify intent
+
+    Router-->>Bolt: route = coach, workflow = prep
+
+    Bolt->>Coach: Execute prep workflow
+
+    par Parallel data gathering
+        Coach->>HS: Get Acme Corp deals, contacts, recent notes
+        HS-->>Coach: 3 open deals, 12 contacts, 8 recent notes
+    and
+        Coach->>RAG: Search QBR preparation + enterprise accounts
+        RAG-->>Coach: QBR playbook section + enterprise best practices
+    and
+        Coach->>Web: Search Acme Corp latest news 2026
+        Web-->>Coach: Recent funding round, new CTO hired
+    and
+        Coach->>BQ: SELECT win_rate, avg_deal_size FROM deals
+        BQ-->>Coach: 67% win rate, $45K avg deal size
+    end
+
+    Coach->>Coach: Synthesize prep brief (Claude Sonnet 4.5)
+    Coach-->>Bolt: Formatted prep brief
+
+    Bolt->>Slack: Block Kit message with account summary, talking points, risk areas, agenda, news
+    Slack->>Rep: Meeting prep brief in DM

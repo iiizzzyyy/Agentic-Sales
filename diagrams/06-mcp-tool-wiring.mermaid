@@ -1,0 +1,34 @@
+---
+title: "MCP Tool Wiring - How Agents Connect to Services"
+---
+graph LR
+    subgraph AGENTS["LangGraph Agents - MCP Clients"]
+        ROUTER["Router\n(Haiku)"]
+        COACH["Coach\n(Claude Sonnet)"]
+        ASSISTANT["Assistant\n(Gemini)"]
+    end
+
+    subgraph MCP_SERVERS["MCP Servers - Standalone Processes"]
+        HS["HubSpot MCP Server\nOfficial Public Beta\n+ shinzo-labs/hubspot-mcp\n\nRead: contacts, companies,\ndeals, tickets, notes\nWrite: create/update deals,\ncontacts, log activities\nAuth: OAuth 2.0"]
+
+        BQ["BigQuery MCP Server\nGoogle Official Managed\n\nQuery: Run SQL\nSchema: Inspect tables\nAuth: Service Account"]
+
+        GM["Gmail MCP Server\nshinzo-labs/gmail-mcp\nor GongRzhe/Gmail-MCP\n\nRead: search, get messages\nWrite: create drafts, send\nAuth: OAuth 2.0 via Google"]
+
+        WS["Web Search MCP\nTavily MCP Server\n\nSearch: web queries\nExtract: page content\nAuth: API key"]
+
+        VDB["Vector DB MCP\nCustom wrapper\n\nSearch: semantic + keyword\nIndex: add/update docs\nTarget: Qdrant or Weaviate"]
+    end
+
+    COACH ---|MCP Protocol| HS
+    COACH ---|MCP Protocol| BQ
+    COACH ---|MCP Protocol| WS
+    COACH ---|MCP Protocol| VDB
+    ASSISTANT ---|MCP Protocol| HS
+    ASSISTANT ---|MCP Protocol| BQ
+    ASSISTANT ---|MCP Protocol| GM
+    ASSISTANT ---|MCP Protocol| WS
+    ASSISTANT ---|MCP Protocol| VDB
+
+    style AGENTS fill:#2D3436,color:#fff
+    style MCP_SERVERS fill:#1a1a2e,color:#fff

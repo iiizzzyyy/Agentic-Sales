@@ -1,0 +1,44 @@
+[
+  {
+    "id": "owner_100",
+    "email": "sarah.chen@ourcompany.com",
+    "firstName": "Sarah",
+    "lastName": "Chen",
+    "role": "Senior Account Executive"
+  },
+  {
+    "id": "owner_101",
+    "email": "jordan.rivera@ourcompany.com",
+    "firstName": "Jordan",
+    "lastName": "Rivera",
+    "role": "Account Executive"
+  },
+  {
+    "id": "owner_102",
+    "email": "morgan.taylor@ourcompany.com",
+    "firstName": "Morgan",
+    "lastName": "Taylor",
+    "role": "Account Executive"
+  },
+  {
+    "id": "owner_103",
+    "email": "alex.kim@ourcompany.com",
+    "firstName": "Alex",
+    "lastName": "Kim",
+    "role": "Account Executive"
+  },
+  {
+    "id": "owner_104",
+    "email": "taylor.nguyen@ourcompany.com",
+    "firstName": "Taylor",
+    "lastName": "Nguyen",
+    "role": "Account Executive"
+  },
+  {
+    "id": "owner_105",
+    "email": "casey.brooks@ourcompany.com",
+    "firstName": "Casey",
+    "lastName": "Brooks",
+    "role": "Account Executive"
+  }
+]

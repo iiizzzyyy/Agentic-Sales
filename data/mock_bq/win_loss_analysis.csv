@@ -1,0 +1,6 @@
+quarter,total_won,total_lost,win_rate,avg_won_deal_size,avg_sales_cycle_days,top_loss_reason
+2025-Q1,19,18,0.51,69435,82,Competitor
+2025-Q2,21,5,0.81,65541,76,Competitor
+2025-Q3,23,12,0.66,72032,83,No Decision
+2025-Q4,21,7,0.75,63851,85,Competitor
+2026-Q1,19,12,0.61,86208,40,Competitor

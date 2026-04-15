@@ -1,0 +1,93 @@
+{
+  "thread_id": "thread_dataflow_001",
+  "subject": "Re: DataFlow Inc — Updated Proposal & Implementation Timeline",
+  "associations": {
+    "company_id": "dataflow_inc",
+    "deal_id": "deal_df_001",
+    "contact_ids": ["contact_df_001", "contact_df_002", "contact_df_003"]
+  },
+  "participants": [
+    {
+      "name": "Jordan Mitchell",
+      "email": "jordan.mitchell@ourcompany.com",
+      "role": "rep"
+    },
+    {
+      "name": "Priya Sharma",
+      "email": "priya.sharma@dataflow.io",
+      "role": "prospect"
+    },
+    {
+      "name": "Jennifer Liu",
+      "email": "jennifer.liu@dataflow.io",
+      "role": "prospect"
+    },
+    {
+      "name": "Marcus Chen",
+      "email": "marcus.chen@dataflow.io",
+      "role": "prospect"
+    }
+  ],
+  "messages": [
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "priya.sharma@dataflow.io",
+        "jennifer.liu@dataflow.io"
+      ],
+      "cc": [
+        "marcus.chen@dataflow.io"
+      ],
+      "date": "2026-03-08T11:00:00Z",
+      "body": "Priya, Jennifer, Marcus,\n\nFollowing our productive calls over the past few weeks, I'm pleased to send the updated proposal with the terms we discussed:\n\n**DataFlow Inc — Enterprise Platform License**\n- 40 seats, Enterprise Plan\n- $156,000/year (2-year commitment)\n- Quarterly invoicing (net-30)\n- Priority onboarding with dedicated CSM\n- Custom MEDDIC methodology with Technical Validation stage\n- 90-day performance guarantee\n\n**Attached:**\n1. Updated proposal PDF\n2. Master Service Agreement (MSA)\n3. Data Processing Agreement (DPA)\n4. SOC 2 Type II report\n5. Implementation timeline targeting April 15 go-live\n\nJennifer — as discussed, I've included a custom ROI model projecting $2.8M in recovered pipeline value based on the ramp time improvement we forecasted. Happy to walk through this before your board presentation if helpful.\n\nMarcus — the integration architecture diagram is on page 12 of the proposal. I've highlighted the Salesforce sync points and data residency options.\n\nPriya forwarded to legal within 2 hours last time — hoping for similar speed here! Our team is standing by to turn around any redlines within 48 hours.\n\nBest,\nJordan"
+    },
+    {
+      "from": "jennifer.liu@dataflow.io",
+      "to": [
+        "jordan.mitchell@ourcompany.com"
+      ],
+      "cc": [
+        "priya.sharma@dataflow.io",
+        "marcus.chen@dataflow.io"
+      ],
+      "date": "2026-03-10T09:15:00Z",
+      "body": "Jordan,\n\nThank you for the comprehensive proposal. The ROI model is helpful — I appreciate the detail on the ramp time assumptions.\n\nTwo questions before I can sign off:\n\n1. The 90-day performance guarantee — can you clarify the exit terms? If we invoke the clause, what's the refund calculation?\n\n2. Our Q2 sales kickoff is April 20. Priya mentioned you committed to having us fully live by then. Can we add a service credit or penalty clause if implementation is delayed on your end?\n\nI want to make sure we're protected given the tight timeline.\n\nJennifer"
+    },
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "jennifer.liu@dataflow.io"
+      ],
+      "cc": [
+        "priya.sharma@dataflow.io",
+        "marcus.chen@dataflow.io"
+      ],
+      "date": "2026-03-10T14:30:00Z",
+      "body": "Jennifer,\n\nGreat questions — both are reasonable asks.\n\n1. **90-day guarantee:** If invoked, you receive a full refund of fees paid to date, minus any third-party costs we've incurred (primarily Salesforce API fees if applicable). In practice, this is typically 95-100% of the contract value. The clause requires written notice and a 30-day cure period so we have a chance to address any issues first.\n\n2. **Implementation guarantee:** We're confident in the April 15 timeline, but I understand the pressure around SKO. I can offer a service credit equal to 1 week of fees (approximately $3,000) for each week we miss the April 20 deadline, up to 4 weeks. Beyond that, you would have the right to terminate. I've seen our implementation team hit tighter timelines than this.\n\nI'll have our legal team add both clauses to the MSA. You should have an updated version by end of day tomorrow.\n\nDoes this address your concerns?\n\nJordan"
+    },
+    {
+      "from": "jennifer.liu@dataflow.io",
+      "to": [
+        "jordan.mitchell@ourcompany.com"
+      ],
+      "cc": [
+        "priya.sharma@dataflow.io",
+        "marcus.chen@dataflow.io"
+      ],
+      "date": "2026-03-11T10:45:00Z",
+      "body": "Jordan,\n\nYes, that works for me. Please send the updated MSA and I'll have our legal team review by Friday.\n\nOne more item: we'll need 3 customer references in the data infrastructure or enterprise SaaS space. Can you provide contacts?\n\nJennifer"
+    },
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "jennifer.liu@dataflow.io"
+      ],
+      "cc": [
+        "priya.sharma@dataflow.io",
+        "marcus.chen@dataflow.io"
+      ],
+      "date": "2026-03-11T15:00:00Z",
+      "body": "Jennifer,\n\nUpdated MSA attached with both clauses added (see Section 8.3 for performance guarantee, Exhibit C for implementation SLA).\n\nFor references, I've arranged calls with:\n\n1. **StreamData Systems** (data infrastructure, 35 seats) — VP of Sales Operations available Thursday 2pm PT\n2. **CloudMetrics Inc** (enterprise SaaS, 50 seats) — Director of Enablement available Friday 11am PT\n3. **PipelineAI** (ML platform, 25 seats) — CRO available Monday 10am PT\n\nLet me know which work for your team and I'll send calendar invites.\n\nLooking forward to closing this out.\n\nJordan"
+    }
+  ]
+}

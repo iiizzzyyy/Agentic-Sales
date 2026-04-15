@@ -1,0 +1,11 @@
+{
+  "name": "SPIN Selling",
+  "description": "Situation, Problem, Implication, Need-Payoff questions",
+  "dimensions": [
+    {"key": "situation_questions", "label": "Situation Questions", "description": "Did the rep gather context about the prospect's current state and environment?", "weight": 0.8},
+    {"key": "problem_questions", "label": "Problem Questions", "description": "Did the rep uncover specific problems, difficulties, or dissatisfactions?", "weight": 1.0},
+    {"key": "implication_questions", "label": "Implication Questions", "description": "Did the rep explore the consequences and impact of those problems?", "weight": 1.2},
+    {"key": "need_payoff_questions", "label": "Need-Payoff Questions", "description": "Did the rep guide the prospect to articulate the value of solving the problem?", "weight": 1.2},
+    {"key": "active_listening", "label": "Active Listening", "description": "Did the rep listen deeply, acknowledge responses, and build on what was said?", "weight": 1.0}
+  ]
+}

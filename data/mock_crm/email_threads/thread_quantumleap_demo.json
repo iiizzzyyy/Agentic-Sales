@@ -1,0 +1,80 @@
+{
+  "thread_id": "thread_quantumleap_001",
+  "subject": "Re: QuantumLeap AI — Demo Confirmation for Monday",
+  "associations": {
+    "company_id": "quantumleap_ai",
+    "deal_id": "deal_ql_001",
+    "contact_ids": ["contact_ql_001", "contact_ql_002"]
+  },
+  "participants": [
+    {
+      "name": "Sarah Park",
+      "email": "sarah.park@ourcompany.com",
+      "role": "rep"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex.rivera@quantumleap.ai",
+      "role": "prospect"
+    },
+    {
+      "name": "Samantha Park",
+      "email": "samantha.park@quantumleap.ai",
+      "role": "prospect"
+    }
+  ],
+  "messages": [
+    {
+      "from": "sarah.park@ourcompany.com",
+      "to": [
+        "alex.rivera@quantumleap.ai"
+      ],
+      "cc": [],
+      "date": "2026-03-13T09:00:00Z",
+      "body": "Alex,\n\nLooking forward to Monday's demo at 2pm PT. As discussed, I've prepared scenarios tailored to QuantumLeap:\n\n**Demo Agenda (45 min):**\n1. Platform overview (10 min)\n2. Live roleplay demo — competitive positioning vs DataRobot (15 min)\n3. Coaching dashboard walkthrough for managers (10 min)\n4. Q&A (10 min)\n\n**Custom scenarios I'll show:**\n- \"Why choose a 30-person startup over DataRobot?\"\n- \"We're thinking of building this in-house\"\n- Technical buyer persona — skeptical VP of Engineering\n- Pricing pushback (holding firm on no discounts)\n\nDo you want me to add anything else? Also, can you confirm Samantha, Kenji, and Alicia are still joining?\n\nI'll send the Zoom link separately.\n\nSarah"
+    },
+    {
+      "from": "alex.rivera@quantumleap.ai",
+      "to": [
+        "sarah.park@ourcompany.com"
+      ],
+      "cc": [
+        "samantha.park@quantumleap.ai"
+      ],
+      "date": "2026-03-13T11:30:00Z",
+      "body": "Sarah,\n\nThis looks perfect. All four of us are confirmed.\n\nSamantha asked if you can spend extra time on the coaching dashboard — she wants to understand how she can track improvement over time without micromanaging. Also, can you show what the reporting looks like for a team of 5-10 reps? We're planning to grow.\n\nOne more thing: can you show how long a typical practice session takes? Our reps are always in meetings so we need to know the time commitment.\n\nAlex"
+    },
+    {
+      "from": "sarah.park@ourcompany.com",
+      "to": [
+        "alex.rivera@quantumleap.ai",
+        "samantha.park@quantumleap.ai"
+      ],
+      "cc": [],
+      "date": "2026-03-13T14:15:00Z",
+      "body": "Alex, Samantha,\n\nGreat questions — I'll make sure to address all of them:\n\n**Coaching dashboard:** I'll show the \"CEO View\" which gives high-level team trends without drill-down into individual sessions. Samantha can see which skills are improving, which need attention, and set team-wide goals. Alerts notify managers when a rep struggles repeatedly on the same scenario.\n\n**Scaling to 5-10 reps:** I'll switch to a demo account with 8 reps so you can see what the dashboard looks like at that size. The views are designed to scale — managers don't have to review every session, just the ones flagged for attention.\n\n**Practice session length:** Most reps do 2-3 scenarios per session, which takes 10-15 minutes. We recommend 3x per week. So the total time commitment is about 30-45 minutes weekly. Reps can practice on mobile between meetings if needed.\n\nSee you Monday!\n\nSarah"
+    },
+    {
+      "from": "samantha.park@quantumleap.ai",
+      "to": [
+        "sarah.park@ourcompany.com"
+      ],
+      "cc": [
+        "alex.rivera@quantumleap.ai"
+      ],
+      "date": "2026-03-14T08:45:00Z",
+      "body": "Sarah,\n\nQuick question before Monday — we're also talking to Gong and Chorus. How do you differentiate from call recording/analysis tools?\n\nI want to make sure I'm comparing the right things.\n\nSamantha"
+    },
+    {
+      "from": "sarah.park@ourcompany.com",
+      "to": [
+        "samantha.park@quantumleap.ai"
+      ],
+      "cc": [
+        "alex.rivera@quantumleap.ai"
+      ],
+      "date": "2026-03-14T10:00:00Z",
+      "body": "Samantha,\n\nGreat question — we get asked this a lot:\n\n**Gong/Chorus = Reactive coaching**\nThey analyze calls AFTER they happen. You find out a rep struggled with pricing objections after the deal is lost or stalled. Valuable, but reactive.\n\n**Our platform = Proactive practice**\nReps practice BEFORE real calls. When they encounter a pricing objection in the field, it's the 20th time they've handled it, not the first. Think of it like a flight simulator vs. analyzing crash footage.\n\n**Many customers use both:**\n- Gong/Chorus to identify gaps from real calls\n- Our platform to practice and close those gaps\n\nIf budget is limited, I'd argue practice ROI is higher because you prevent problems rather than analyze them afterward. But I'm biased!\n\nHappy to discuss more Monday.\n\nSarah"
+    }
+  ]
+}

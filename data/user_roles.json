@@ -1,0 +1,8 @@
+{
+  "managers": [
+    "U09CZBR17NE",
+    "U09DDAPPYMP"
+  ],
+  "default_role": "rep",
+  "_comment": "Add Slack user IDs to the managers list. Managers see all records. Everyone else is matched by email to a HubSpot owner."
+}

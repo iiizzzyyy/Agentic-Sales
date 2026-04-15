@@ -1,0 +1,12 @@
+{
+  "name": "MEDDIC",
+  "description": "Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion",
+  "dimensions": [
+    {"key": "metrics", "label": "Metrics Discovery", "description": "Did the rep quantify business impact and tie the solution to measurable outcomes?", "weight": 1.0},
+    {"key": "economic_buyer", "label": "Economic Buyer Access", "description": "Did the rep identify and engage the person with budget authority?", "weight": 1.0},
+    {"key": "decision_criteria", "label": "Decision Criteria", "description": "Did the rep uncover evaluation criteria the buyer uses to compare solutions?", "weight": 1.0},
+    {"key": "decision_process", "label": "Decision Process", "description": "Did the rep map the buying process, stakeholders, timeline, and approval flow?", "weight": 1.0},
+    {"key": "identify_pain", "label": "Pain Identification", "description": "Did the rep uncover deep, compelling pain beyond surface-level symptoms?", "weight": 1.2},
+    {"key": "champion", "label": "Champion Development", "description": "Did the rep identify and cultivate an internal champion who will sell on their behalf?", "weight": 1.0}
+  ]
+}

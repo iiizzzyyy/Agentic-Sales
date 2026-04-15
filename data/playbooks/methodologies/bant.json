@@ -1,0 +1,10 @@
+{
+  "name": "BANT",
+  "description": "Budget, Authority, Need, Timeline",
+  "dimensions": [
+    {"key": "budget", "label": "Budget Discovery", "description": "Did the rep uncover the prospect's budget range, funding source, or willingness to invest?", "weight": 1.0},
+    {"key": "authority", "label": "Authority Mapping", "description": "Did the rep identify the decision maker and understand the approval chain?", "weight": 1.0},
+    {"key": "need", "label": "Need Assessment", "description": "Did the rep uncover a genuine, compelling business need that maps to their solution?", "weight": 1.2},
+    {"key": "timeline", "label": "Timeline Establishment", "description": "Did the rep determine the prospect's urgency and expected implementation timeline?", "weight": 1.0}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "companies": {
+    "NovaTech Solutions": "416068893898",
+    "Greenfield Analytics": "415138045132",
+    "Meridian Healthcare": "416081471684",
+    "Apex Manufacturing": "415762253043",
+    "CloudBridge Systems": "415933548731",
+    "TerraLogistics": "415156084970",
+    "Pinnacle Financial Group": "416067096805",
+    "Velocity Retail": "416061703381",
+    "Stratos Energy": "416158878928",
+    "Horizon Education": "415938954474"
+  },
+  "contacts": {
+    "Maria_Okafor_NovaTech Solutions": "726456397027",
+    "David_Rodriguez_Greenfield Analytics": "726183540930",
+    "Sarah_Fischer_Meridian Healthcare": "726344492260",
+    "Aisha_Patel_Meridian Healthcare": "726130495691",
+    "Lisa_Singh_Apex Manufacturing": "725902557389",
+    "Rachel_Ahmed_Apex Manufacturing": "726284676328",
+    "Lisa_Ahmed_Apex Manufacturing": "725902557392",
+    "Priya_Chen_CloudBridge Systems": "726353295607",
+    "Robert_Chen_TerraLogistics": "726338160882",
+    "Emma_Singh_TerraLogistics": "726344492273",
+    "Sarah_Williams_Pinnacle Financial Group": "726395791586",
+    "Robert_Fischer_Pinnacle Financial Group": "726241056958",
+    "Robert_Nakamura_Velocity Retail": "726344492278",
+    "Emma_O'Brien_Velocity Retail": "726405329110",
+    "Nina_Patel_Velocity Retail": "726407168233",
+    "Sarah_Ahmed_Stratos Energy": "726183540957",
+    "Maria_Ahmed_Stratos Energy": "726393893082",
+    "Daniel_Okafor_Stratos Energy": "726155617475",
+    "Wei_Chen_Horizon Education": "726155617476"
+  },
+  "deals": {
+    "NovaTech Solutions - Pilot Program": "488201999600",
+    "Greenfield Analytics - Annual Platform License": "488061849845",
+    "Meridian Healthcare - Enterprise Expansion": "488329663719",
+    "Apex Manufacturing - Pilot Program": "488250564817",
+    "CloudBridge Systems - Annual Platform License": "488375513280",
+    "TerraLogistics - Pilot Program": "488061849847",
+    "Pinnacle Financial Group - Pilot Program": "488083422401",
+    "Velocity Retail - Enterprise Expansion": "488344044744",
+    "Stratos Energy - Enterprise Expansion": "488322470077",
+    "Horizon Education - Annual Platform License": "488327866572"
+  },
+  "seeded_at": "2026-03-05T14:36:28.743411"
+}

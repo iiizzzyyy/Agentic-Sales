@@ -1,0 +1,178 @@
+[
+  {
+    "id": "meeting_nt_001",
+    "properties": {
+      "title": "NovaTech Solutions — Discovery Call",
+      "start_time": "2026-02-05T14:00:00Z",
+      "end_time": "2026-02-05T15:00:00Z",
+      "meeting_type": "discovery",
+      "outcome": "completed",
+      "summary": "Initial discovery with Wei Ahmed. Identified pain points: manual coaching process, inconsistent messaging. Budget approved for Q1. Decision timeline: 6 weeks."
+    },
+    "associations": {
+      "deal_id": "deal_992410",
+      "company_id": "novatech_solutions",
+      "contact_ids": ["contact_907662"]
+    }
+  },
+  {
+    "id": "meeting_nt_002",
+    "properties": {
+      "title": "NovaTech Solutions — Demo",
+      "start_time": "2026-02-12T15:00:00Z",
+      "end_time": "2026-02-12T16:00:00Z",
+      "meeting_type": "demo",
+      "outcome": "completed",
+      "summary": "Demo with Wei and CTO. Wei impressed with AI roleplay. CTO asked about security and HubSpot integration. Sent SOC 2 report and integration docs."
+    },
+    "associations": {
+      "deal_id": "deal_992410",
+      "company_id": "novatech_solutions",
+      "contact_ids": ["contact_907662"]
+    }
+  },
+  {
+    "id": "meeting_nt_003",
+    "properties": {
+      "title": "NovaTech Solutions — Champion Call",
+      "start_time": "2026-02-15T16:00:00Z",
+      "end_time": "2026-02-15T16:30:00Z",
+      "meeting_type": "champion_call",
+      "outcome": "completed",
+      "summary": "Champion call with Wei. Confirmed CFO is economic buyer. CFO cares about ROI timeline, implementation disruption, integration with stack. Prepping CFO one-pager."
+    },
+    "associations": {
+      "deal_id": "deal_992410",
+      "company_id": "novatech_solutions",
+      "contact_ids": ["contact_907662"]
+    }
+  },
+  {
+    "id": "meeting_df_001",
+    "properties": {
+      "title": "DataFlow Inc — Discovery Call",
+      "start_time": "2026-01-15T22:00:00Z",
+      "end_time": "2026-01-15T22:45:00Z",
+      "meeting_type": "discovery",
+      "outcome": "completed",
+      "summary": "Discovery with Priya Sharma. DataFlow scaling 15→40 reps. Main pain: 6-month ramp, 18% vs 35% close rate gap. Budget: $150-180K approved. SKO deadline: April 20."
+    },
+    "associations": {
+      "deal_id": "deal_df_001",
+      "company_id": "dataflow_inc",
+      "contact_ids": ["contact_df_001"]
+    }
+  },
+  {
+    "id": "meeting_df_002",
+    "properties": {
+      "title": "DataFlow Inc — Technical Deep-Dive",
+      "start_time": "2026-02-28T18:30:00Z",
+      "end_time": "2026-02-28T19:25:00Z",
+      "meeting_type": "technical_review",
+      "outcome": "completed",
+      "summary": "Technical deep-dive with Marcus Chen (CTO) and Priya. Covered: SOC 2, Salesforce integration, GDPR compliance, custom MEDDIC methodology. Marcus is now a champion. Next: CFO approval."
+    },
+    "associations": {
+      "deal_id": "deal_df_001",
+      "company_id": "dataflow_inc",
+      "contact_ids": ["contact_df_001", "contact_df_002"]
+    }
+  },
+  {
+    "id": "meeting_df_003",
+    "properties": {
+      "title": "DataFlow Inc — CFO Call",
+      "start_time": "2026-03-10T22:00:00Z",
+      "end_time": "2026-03-10T22:30:00Z",
+      "meeting_type": "economic_buyer",
+      "outcome": "completed",
+      "summary": "Jennifer (CFO) joined call. Concerned about implementation timeline and April SKO deadline. Committed to dedicated CSM and 2-week sprint. She wants guarantee in writing. Sent updated proposal with SLA."
+    },
+    "associations": {
+      "deal_id": "deal_df_001",
+      "company_id": "dataflow_inc",
+      "contact_ids": ["contact_df_001", "contact_df_003"]
+    }
+  },
+  {
+    "id": "meeting_df_004",
+    "properties": {
+      "title": "DataFlow Inc — Final Negotiation",
+      "start_time": "2026-03-14T00:30:00Z",
+      "end_time": "2026-03-14T01:15:00Z",
+      "meeting_type": "negotiation",
+      "outcome": "completed",
+      "summary": "Final negotiation with Priya and Marcus. Narrowed to us vs CompetitorBeta. Our differentiator: AI roleplay adaptation. They want custom success metrics dashboard. Decision expected by end of week."
+    },
+    "associations": {
+      "deal_id": "deal_df_001",
+      "company_id": "dataflow_inc",
+      "contact_ids": ["contact_df_001", "contact_df_002"]
+    }
+  },
+  {
+    "id": "meeting_ql_001",
+    "properties": {
+      "title": "QuantumLeap AI — Intro Call",
+      "start_time": "2026-03-01T23:00:00Z",
+      "end_time": "2026-03-01T23:30:00Z",
+      "meeting_type": "discovery",
+      "outcome": "completed",
+      "summary": "Intro call with Alex Rivera. 3-person sales team with inconsistent approaches. Main competitors: DataRobot, C3.ai. Struggle with competitive positioning and pricing confidence. Demo scheduled for 3/17."
+    },
+    "associations": {
+      "deal_id": "deal_ql_001",
+      "company_id": "quantumleap_ai",
+      "contact_ids": ["contact_ql_001"]
+    }
+  },
+  {
+    "id": "meeting_ql_002",
+    "properties": {
+      "title": "QuantumLeap AI — Demo for CEO & Team",
+      "start_time": "2026-03-17T22:00:00Z",
+      "end_time": "2026-03-17T22:45:00Z",
+      "meeting_type": "demo",
+      "outcome": "scheduled",
+      "summary": "Demo for Alex, Samantha (CEO), and 2 AEs. Focus: competitive positioning vs DataRobot, build vs buy, technical buyer personas, pricing confidence."
+    },
+    "associations": {
+      "deal_id": "deal_ql_001",
+      "company_id": "quantumleap_ai",
+      "contact_ids": ["contact_ql_001", "contact_ql_002"]
+    }
+  },
+  {
+    "id": "meeting_vr_001",
+    "properties": {
+      "title": "Velocity Retail — Champion Transition",
+      "start_time": "2026-03-17T23:00:00Z",
+      "end_time": "2026-03-17T23:15:00Z",
+      "meeting_type": "internal",
+      "outcome": "scheduled",
+      "summary": "Call with Wei Kim (departing champion) to discuss deal closure strategy before she leaves March 31. Goal: close contract before transition to new contact Jake Martinez."
+    },
+    "associations": {
+      "deal_id": "deal_831953",
+      "company_id": "velocity_retail",
+      "contact_ids": ["contact_894444"]
+    }
+  },
+  {
+    "id": "meeting_cb_001",
+    "properties": {
+      "title": "CloudBridge Systems — CFO Intro (Pending)",
+      "start_time": "2026-03-20T20:00:00Z",
+      "end_time": "2026-03-20T20:30:00Z",
+      "meeting_type": "economic_buyer",
+      "outcome": "scheduled",
+      "summary": "Attempting to schedule CFO intro through David (champion). CFO pushed back on $72K — needs value justification. Goal: present ROI model and close MEDDIC gap on Economic Buyer."
+    },
+    "associations": {
+      "deal_id": "deal_250067",
+      "company_id": "cloudbridge_systems",
+      "contact_ids": ["contact_211558"]
+    }
+  }
+]

@@ -1,0 +1,53 @@
+---
+title: "Assistant Agent - Detailed Workflow Graph"
+---
+graph TB
+    START((Start)) --> CLASSIFY["Classify Request"]
+    CLASSIFY --> CHOOSE{Choose Workflow}
+
+    CHOOSE -->|"company/deal research"| RES
+    CHOOSE -->|"update CRM"| CRM
+    CHOOSE -->|"draft email"| EMAIL
+    CHOOSE -->|"pipeline status"| PIPE
+
+    subgraph RESEARCH["Research Brief Workflow"]
+        RES["Start Research"] --> RES_HS["HubSpot MCP:\nGet Deal + Contact"]
+        RES_HS --> RES_WEB["Web Search Tavily:\nCompany News"]
+        RES_WEB --> RES_BQ["BigQuery:\nHistorical Data"]
+        RES_BQ --> RES_RAG["RAG: Pull\nPlaybook Context"]
+        RES_RAG --> RES_GEN["Generate Brief\nGemini 2.5 Pro"]
+    end
+
+    subgraph CRM_UPDATE["CRM Update Workflow"]
+        CRM["Start CRM Update"] --> CRM_PARSE["Parse Slack\nMessage Content"]
+        CRM_PARSE --> CRM_EXTRACT["Extract Entities\nnames, companies, actions"]
+        CRM_EXTRACT --> CRM_HS["HubSpot MCP:\nUpdate Contact/Deal"]
+        CRM_HS --> CRM_CONFIRM["Confirm Update\nto User in Slack"]
+    end
+
+    subgraph EMAIL_DRAFT["Email Draft Workflow"]
+        EMAIL["Start Email Draft"] --> EMAIL_HS["HubSpot MCP:\nGet Deal Context"]
+        EMAIL_HS --> EMAIL_RAG["RAG: Pull Email\nTemplates"]
+        EMAIL_RAG --> EMAIL_GEN["Generate Draft\nGemini 2.5 Pro"]
+        EMAIL_GEN --> EMAIL_GMAIL["Gmail MCP:\nCreate Draft"]
+        EMAIL_GMAIL --> EMAIL_CONFIRM["Send Preview\nto User in Slack"]
+    end
+
+    subgraph PIPELINE["Pipeline Health Workflow"]
+        PIPE["Start Pipeline Check"] --> PIPE_HS["HubSpot MCP:\nPull All Open Deals"]
+        PIPE_HS --> PIPE_BQ["BigQuery:\nWin Rate Trends"]
+        PIPE_BQ --> PIPE_FLAG["Flag: Stale Deals,\nMissing Data,\nOverdue Tasks"]
+        PIPE_FLAG --> PIPE_GEN["Generate Digest\nGemini 2.5 Pro"]
+    end
+
+    RES_GEN --> FORMAT
+    CRM_CONFIRM --> FORMAT
+    EMAIL_CONFIRM --> FORMAT
+    PIPE_GEN --> FORMAT
+
+    FORMAT["Format and Return\nto Slack"] --> END_NODE((End))
+
+    style RESEARCH fill:#0077B6,color:#fff
+    style CRM_UPDATE fill:#0096C7,color:#fff
+    style EMAIL_DRAFT fill:#00B4D8,color:#fff
+    style PIPELINE fill:#48CAE4,color:#000

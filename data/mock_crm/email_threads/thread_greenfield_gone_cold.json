@@ -1,0 +1,59 @@
+{
+  "thread_id": "thread_greenfield_003",
+  "subject": "Re: Greenfield Analytics \u2014 Case Studies & Next Steps",
+  "associations": {
+    "company_id": "greenfield_analytics",
+    "deal_id": "deal_111659",
+    "contact_ids": ["contact_730330"]
+  },
+  "participants": [
+    {
+      "name": "Alex Rivera",
+      "email": "alex.rivera@ourcompany.com",
+      "role": "rep"
+    },
+    {
+      "name": "Tom Fischer",
+      "email": "tom.fischer@greenfieldanalytics.com",
+      "role": "prospect"
+    }
+  ],
+  "messages": [
+    {
+      "from": "alex.rivera@ourcompany.com",
+      "to": [
+        "tom.fischer@greenfieldanalytics.com"
+      ],
+      "cc": [],
+      "date": "2026-02-12T16:00:00Z",
+      "body": "Hi Tom,\n\nGreat chatting today. As promised, here are the case studies:\n\n1. CloudBridge Systems \u2014 60% faster ramp time\n2. TerraLogistics \u2014 34% improvement in close rates\n3. Energy sector reference \u2014 28% pipeline growth\n\nLet me know what you think and we can set up that demo.\n\nBest,\nAlex"
+    },
+    {
+      "from": "alex.rivera@ourcompany.com",
+      "to": [
+        "tom.fischer@greenfieldanalytics.com"
+      ],
+      "cc": [],
+      "date": "2026-02-19T10:30:00Z",
+      "body": "Hi Tom,\n\nJust following up on the case studies I sent last week. Had a chance to review them?\n\nHappy to schedule a quick demo whenever works for you.\n\nBest,\nAlex"
+    },
+    {
+      "from": "alex.rivera@ourcompany.com",
+      "to": [
+        "tom.fischer@greenfieldanalytics.com"
+      ],
+      "cc": [],
+      "date": "2026-02-26T09:15:00Z",
+      "body": "Tom,\n\nCircling back one more time. I also wanted to share something relevant \u2014 we just published a report on AI adoption in the analytics industry. Given Greenfield's focus on data analytics, I thought you might find the section on sales team productivity interesting.\n\n[link to report]\n\nStill happy to chat whenever the timing is right.\n\nAlex"
+    },
+    {
+      "from": "tom.fischer@greenfieldanalytics.com",
+      "to": [
+        "alex.rivera@ourcompany.com"
+      ],
+      "cc": [],
+      "date": "2026-03-01T15:40:00Z",
+      "body": "Alex,\n\nSorry for the radio silence \u2014 things have been crazy here. We ended up going with CompetitorAlpha for now. The price point was a big factor since we're a smaller team.\n\nAppreciate you sending all those materials though. If things change, I'll reach out.\n\nTom"
+    }
+  ]
+}

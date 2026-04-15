@@ -1,0 +1,38 @@
+---
+title: "Implementation Timeline - 14 Weeks"
+---
+gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+
+    section Phase 1 - Foundation
+    Slack app + Bolt SDK setup          :p1a, 2026-03-10, 5d
+    LangGraph project scaffold          :p1b, after p1a, 5d
+    HubSpot MCP connection              :p1c, after p1a, 3d
+    BigQuery MCP connection             :p1d, after p1a, 3d
+    ChromaDB local RAG prototype        :p1e, after p1b, 5d
+    /research and /deal commands        :p1f, after p1e, 5d
+
+    section Phase 2 - Assistant MVP
+    Assistant subgraph (Gemini)         :p2a, 2026-03-31, 5d
+    Research brief workflow             :p2b, after p2a, 5d
+    Email draft + Gmail MCP            :p2c, after p2b, 5d
+    Pipeline health alerts             :p2d, after p2b, 3d
+    Migrate to Qdrant/Weaviate          :p2e, after p2a, 7d
+    Voyage AI embeddings setup          :p2f, after p2e, 3d
+
+    section Phase 3 - Coach MVP
+    Coach subgraph (Claude Sonnet)      :p3a, 2026-04-21, 5d
+    Roleplay durable execution          :p3b, after p3a, 10d
+    Index playbooks + battle cards      :p3c, after p3a, 5d
+    Post-call feedback workflow         :p3d, after p3b, 5d
+    Rep profile storage                 :p3e, after p3a, 5d
+    Cohere Rerank integration           :p3f, after p3c, 3d
+
+    section Phase 4 - Intelligence
+    BigQuery analytics integration      :p4a, 2026-05-19, 5d
+    Manager weekly digest              :p4b, after p4a, 5d
+    Cross-agent coordination           :p4c, after p4b, 5d
+    Semantic chunking for transcripts   :p4d, after p4a, 5d
+    Observability (Langfuse/LangSmith)  :p4e, after p4c, 5d
+    Load testing + cost optimization    :p4f, after p4e, 5d

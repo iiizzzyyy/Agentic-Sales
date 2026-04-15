@@ -1,0 +1,29 @@
+---
+title: "Coach Roleplay - Multi-Turn Loop with Durable Execution"
+---
+stateDiagram-v2
+    [*] --> ParseRequest: Rep sends /coach roleplay
+    ParseRequest --> LoadProfile: Load rep skill profile
+    LoadProfile --> RAGRetrieval: Pull ICP, objections, battle cards
+
+    RAGRetrieval --> GeneratePersona: Create buyer persona
+    GeneratePersona --> BuyerResponse: Generate buyer opening
+
+    BuyerResponse --> SendToSlack: Post in Slack thread
+    SendToSlack --> WaitForReply: DURABLE PAUSE
+
+    note right of WaitForReply
+        Graph state persisted to Postgres.
+        Can resume hours/days later.
+        Slack thread_ts = graph thread_id.
+    end note
+
+    WaitForReply --> ScoreRepTurn: Rep replies in thread
+    ScoreRepTurn --> CheckTurns: More turns needed?
+
+    CheckTurns --> BuyerResponse: Yes - continue roleplay
+    CheckTurns --> GenerateDebrief: No - end roleplay
+
+    GenerateDebrief --> UpdateProfile: Save scores to rep profile
+    UpdateProfile --> FormatSlack: Post debrief in thread
+    FormatSlack --> [*]

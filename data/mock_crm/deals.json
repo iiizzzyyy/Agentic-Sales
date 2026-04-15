@@ -1,0 +1,830 @@
+[
+  {
+    "id": "deal_992410",
+    "properties": {
+      "dealname": "NovaTech Solutions \u2014 Annual Platform License",
+      "amount": "48000",
+      "dealstage": "discovery",
+      "dealstage_label": "Discovery",
+      "pipeline": "default",
+      "closedate": "2026-03-12",
+      "createdate": "2025-12-02T06:37:35.657878",
+      "hs_lastmodifieddate": "2026-03-10T14:00:00.000000",
+      "hubspot_owner_id": "owner_103",
+      "description": "Active deal with NovaTech Solutions for platform access."
+    },
+    "associations": {
+      "company": "novatech_solutions",
+      "contact": "contact_907662"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Security review completed. Their InfoSec team approved our SOC 2 Type II and penetration test results. One remaining concern: they want a BAA for HIPAA compliance since some of their customers are in healthcare. Legal is reviewing our BAA template. This was the last technical blocker.",
+        "timestamp": "2026-03-10T14:00:00.000000"
+      },
+      {
+        "type": "CALL",
+        "body": "Competitive intel: Spoke with Wei about the CompetitorAlpha demo. She said their UI was 'slick but shallow' — the roleplay scenarios felt scripted and didn't adapt. She's still leaning toward us but wants to see our custom scenario builder. Scheduled a 30-min deep dive for Thursday.",
+        "timestamp": "2026-03-01T11:00:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: NovaTech Solutions is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.657933"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Wei. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.657938"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. Wei was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.657935"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Wei. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.657939"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_269957",
+    "properties": {
+      "dealname": "NovaTech Solutions \u2014 Enterprise Expansion",
+      "amount": "250000",
+      "dealstage": "discovery",
+      "dealstage_label": "Discovery",
+      "pipeline": "default",
+      "closedate": "2026-05-21",
+      "createdate": "2026-03-03T06:37:35.657948",
+      "hs_lastmodifieddate": "2026-02-09T06:37:35.657950",
+      "hubspot_owner_id": "owner_101",
+      "description": "Active deal with NovaTech Solutions for platform access."
+    },
+    "associations": {
+      "company": "novatech_solutions",
+      "contact": "contact_907662"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Wei says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.657970"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: NovaTech Solutions is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.657973"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Wei. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.657974"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. Wei was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.657971"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Wei. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.657975"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_111659",
+    "properties": {
+      "dealname": "Greenfield Analytics \u2014 New Department Rollout",
+      "amount": "120000",
+      "dealstage": "demoscheduled",
+      "dealstage_label": "Demo Scheduled",
+      "pipeline": "default",
+      "closedate": "2026-05-28",
+      "createdate": "2026-04-20T06:37:35.657982",
+      "hs_lastmodifieddate": "2026-03-03T06:37:35.657983",
+      "hubspot_owner_id": "owner_101",
+      "description": "Active deal with Greenfield Analytics for platform access."
+    },
+    "associations": {
+      "company": "greenfield_analytics",
+      "contact": "contact_730330"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Carlos says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.657997"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Greenfield Analytics is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Carlos. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.657998"
+      }
+    ]
+  },
+  {
+    "id": "deal_481873",
+    "properties": {
+      "dealname": "Greenfield Analytics \u2014 New Department Rollout",
+      "amount": "36000",
+      "dealstage": "closedlost",
+      "dealstage_label": "Closed Lost",
+      "pipeline": "default",
+      "closedate": "2026-05-28",
+      "createdate": "2026-03-15T06:37:35.658017",
+      "hs_lastmodifieddate": "2026-02-17T06:37:35.658019",
+      "hubspot_owner_id": "owner_100",
+      "description": "Closed Lost deal with Greenfield Analytics for platform access."
+    },
+    "associations": {
+      "company": "greenfield_analytics",
+      "contact": "contact_730330"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. Greenfield Analytics wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658030"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Carlos. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658031"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Carlos. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658032"
+      }
+    ]
+  },
+  {
+    "id": "deal_993958",
+    "properties": {
+      "dealname": "Meridian Healthcare \u2014 Professional Services Add-On",
+      "amount": "120000",
+      "dealstage": "discovery",
+      "dealstage_label": "Discovery",
+      "pipeline": "default",
+      "closedate": "2026-04-06",
+      "createdate": "2025-12-31T06:37:35.658038",
+      "hs_lastmodifieddate": "2026-02-21T06:37:35.658039",
+      "hubspot_owner_id": "owner_104",
+      "description": "Active deal with Meridian Healthcare for platform access."
+    },
+    "associations": {
+      "company": "meridian_healthcare",
+      "contact": "contact_332354"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Sarah says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.658059"
+      },
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. Meridian Healthcare wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658060"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Meridian Healthcare is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658061"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Sarah. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658057"
+      }
+    ]
+  },
+  {
+    "id": "deal_409756",
+    "properties": {
+      "dealname": "Meridian Healthcare \u2014 Professional Services Add-On",
+      "amount": "36000",
+      "dealstage": "negotiation",
+      "dealstage_label": "Negotiation",
+      "pipeline": "default",
+      "closedate": "2026-04-19",
+      "createdate": "2026-02-28T06:37:35.658065",
+      "hs_lastmodifieddate": "2026-01-31T06:37:35.658067",
+      "hubspot_owner_id": "owner_105",
+      "description": "Active deal with Meridian Healthcare for platform access."
+    },
+    "associations": {
+      "company": "meridian_healthcare",
+      "contact": "contact_332354"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Sarah says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.658076"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Sarah. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658077"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. Sarah was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658078"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_982392",
+    "properties": {
+      "dealname": "Apex Manufacturing \u2014 New Department Rollout",
+      "amount": "180000",
+      "dealstage": "closedwon",
+      "dealstage_label": "Closed Won",
+      "pipeline": "default",
+      "closedate": "2026-04-07",
+      "createdate": "2026-01-21T06:37:35.658084",
+      "hs_lastmodifieddate": "2026-01-19T06:37:35.658085",
+      "hubspot_owner_id": "owner_101",
+      "description": "Closed Won deal with Apex Manufacturing for platform access."
+    },
+    "associations": {
+      "company": "apex_manufacturing",
+      "contact": "contact_311836"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Apex Manufacturing is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658095"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to fatima.chen@apexmfg.com. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658098"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Fatima. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658097"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Fatima. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658096"
+      }
+    ]
+  },
+  {
+    "id": "deal_250067",
+    "properties": {
+      "dealname": "CloudBridge Systems \u2014 Enterprise Expansion",
+      "amount": "72000",
+      "dealstage": "negotiation",
+      "dealstage_label": "Negotiation",
+      "pipeline": "default",
+      "closedate": "2026-04-20",
+      "createdate": "2026-03-13T06:37:35.658104",
+      "hs_lastmodifieddate": "2026-03-12T10:00:00.000000",
+      "hubspot_owner_id": "owner_104",
+      "description": "Active deal with CloudBridge Systems for platform access."
+    },
+    "associations": {
+      "company": "cloudbridge_systems",
+      "contact": "contact_211558"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "MEDDIC review — qualification gaps identified: (M) Metrics: Need to quantify their current ramp time and tie to revenue impact. (E) Economic Buyer: CFO identified but haven't had direct conversation yet. (D) Decision Process: Unclear if there's a formal vendor review. Action items: (1) Get David to set up CFO intro call, (2) Send ROI calculator pre-filled with their team size.",
+        "timestamp": "2026-03-12T10:00:00.000000"
+      },
+      {
+        "type": "CALL",
+        "body": "Pricing negotiation stalled. David says the CFO pushed back on the $72K ask — wants to see it under $60K. Offered 15% discount for 2-year commitment but he's not sure they can commit that far out. He'll try to get 10 minutes with the CFO next week. Risk: deal could slip to Q3 if we can't close the gap.",
+        "timestamp": "2026-03-05T15:30:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. CloudBridge Systems wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658116"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to david.patel@cloudbridge.dev. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658115"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with David. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658117"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. David was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658118"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_926833",
+    "properties": {
+      "dealname": "TerraLogistics \u2014 New Department Rollout",
+      "amount": "15000",
+      "dealstage": "closedlost",
+      "dealstage_label": "Closed Lost",
+      "pipeline": "default",
+      "closedate": "2026-05-10",
+      "createdate": "2026-02-05T06:37:35.658123",
+      "hs_lastmodifieddate": "2026-02-10T06:37:35.658125",
+      "hubspot_owner_id": "owner_102",
+      "description": "Closed Lost deal with TerraLogistics for platform access."
+    },
+    "associations": {
+      "company": "terralogistics",
+      "contact": "contact_769399"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. TerraLogistics wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658142"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: TerraLogistics is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658144"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to yuki.williams@terralogistics.com. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658139"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Yuki. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658141"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Yuki. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658143"
+      }
+    ]
+  },
+  {
+    "id": "deal_105037",
+    "properties": {
+      "dealname": "TerraLogistics \u2014 Annual Platform License",
+      "amount": "180000",
+      "dealstage": "qualification",
+      "dealstage_label": "Qualification",
+      "pipeline": "default",
+      "closedate": "2026-04-13",
+      "createdate": "2025-12-29T06:37:35.658148",
+      "hs_lastmodifieddate": "2026-02-22T06:37:35.658149",
+      "hubspot_owner_id": "owner_101",
+      "description": "Active deal with TerraLogistics for platform access."
+    },
+    "associations": {
+      "company": "terralogistics",
+      "contact": "contact_605544"
+    },
+    "activities": [
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to rachel.ahmed@terralogistics.com. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658158"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Rachel. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658160"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. Rachel was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658159"
+      }
+    ]
+  },
+  {
+    "id": "deal_240587",
+    "properties": {
+      "dealname": "Pinnacle Financial Group \u2014 Annual Platform License",
+      "amount": "250000",
+      "dealstage": "closedwon",
+      "dealstage_label": "Closed Won",
+      "pipeline": "default",
+      "closedate": "2026-04-22",
+      "createdate": "2026-02-06T06:37:35.658165",
+      "hs_lastmodifieddate": "2026-02-17T06:37:35.658167",
+      "hubspot_owner_id": "owner_100",
+      "description": "Closed Won deal with Pinnacle Financial Group for platform access."
+    },
+    "associations": {
+      "company": "pinnacle_financial_group",
+      "contact": "contact_439636"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Carlos says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.658181"
+      },
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. Pinnacle Financial Group wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658182"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Pinnacle Financial Group is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658178"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to carlos.williams@pinnaclefg.com. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658176"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. Carlos was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658179"
+      }
+    ]
+  },
+  {
+    "id": "deal_165092",
+    "properties": {
+      "dealname": "Pinnacle Financial Group \u2014 Q1 Renewal",
+      "amount": "96000",
+      "dealstage": "demoscheduled",
+      "dealstage_label": "Demo Scheduled",
+      "pipeline": "default",
+      "closedate": "2026-04-12",
+      "createdate": "2026-01-30T06:37:35.658186",
+      "hs_lastmodifieddate": "2026-02-10T06:37:35.658187",
+      "hubspot_owner_id": "owner_101",
+      "description": "Active deal with Pinnacle Financial Group for platform access."
+    },
+    "associations": {
+      "company": "pinnacle_financial_group",
+      "contact": "contact_439636"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. Pinnacle Financial Group wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658201"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to carlos.williams@pinnaclefg.com. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658197"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Carlos. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658198"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Carlos. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658200"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_831953",
+    "properties": {
+      "dealname": "Velocity Retail \u2014 New Department Rollout",
+      "amount": "24000",
+      "dealstage": "negotiation",
+      "dealstage_label": "Negotiation",
+      "pipeline": "default",
+      "closedate": "2026-03-22",
+      "createdate": "2025-12-18T06:37:35.658206",
+      "hs_lastmodifieddate": "2026-03-14T09:00:00.000000",
+      "hubspot_owner_id": "owner_102",
+      "description": "Active deal with Velocity Retail for platform access. AT RISK - Champion leaving."
+    },
+    "associations": {
+      "company": "velocity_retail",
+      "contact": "contact_894444"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "DEAL AT RISK: Wei just told me she's leaving Velocity Retail at the end of the month — accepted a VP role at a competitor. She's handing off to her replacement but the new person (Jake Martinez) won't start until April 1. This leaves a 2-week gap with no internal champion. Options: (1) Try to close before Wei leaves, (2) Pause and re-engage with Jake in April. Wei offered to make an intro call before she leaves. Scheduling for Monday.",
+        "timestamp": "2026-03-14T09:00:00.000000"
+      },
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Wei says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.658221"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Velocity Retail is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658216"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Wei. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658220"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. Wei was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658218"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Wei. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658219"
+      }
+    ]
+  },
+  {
+    "id": "deal_860005",
+    "properties": {
+      "dealname": "Stratos Energy \u2014 Annual Platform License",
+      "amount": "72000",
+      "dealstage": "demoscheduled",
+      "dealstage_label": "Demo Scheduled",
+      "pipeline": "default",
+      "closedate": "2026-03-30",
+      "createdate": "2025-12-22T06:37:35.658226",
+      "hs_lastmodifieddate": "2026-01-27T06:37:35.658227",
+      "hubspot_owner_id": "owner_103",
+      "description": "Active deal with Stratos Energy for platform access."
+    },
+    "associations": {
+      "company": "stratos_energy",
+      "contact": "contact_211723"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Stratos Energy is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658246"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent proposal to david.rodriguez@stratosenergy.com. Three-tier pricing. Recommended the Professional plan ($79/user/month, 25 users). Included custom ROI model showing 340% return over 12 months.",
+        "timestamp": "2026-02-19T06:37:35.658248"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. David was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658249"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_767916",
+    "properties": {
+      "dealname": "Stratos Energy \u2014 Multi-Year Agreement",
+      "amount": "24000",
+      "dealstage": "demoscheduled",
+      "dealstage_label": "Demo Scheduled",
+      "pipeline": "default",
+      "closedate": "2026-02-03",
+      "createdate": "2025-10-07T06:37:35.658252",
+      "hs_lastmodifieddate": "2026-02-20T06:37:35.658258",
+      "hubspot_owner_id": "owner_103",
+      "description": "Active deal with Stratos Energy for platform access."
+    },
+    "associations": {
+      "company": "stratos_energy",
+      "contact": "contact_296083"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Quick check-in call. Maria says procurement approved the budget. Legal is reviewing the MSA \u2014 should be back by Friday. They want to start implementation on the 1st.",
+        "timestamp": "2026-03-02T06:37:35.658269"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Stratos Energy is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658271"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with Maria. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658268"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Maria. They're currently using a manual process for sales coaching \u2014 spending ~2 hours/week per manager. Main pain: inconsistent messaging across the team. Budget: approved for Q1. Decision timeline: 6 weeks.",
+        "timestamp": "2026-02-05T06:37:35.658270"
+      }
+    ],
+    "_test_flag": "overdue"
+  },
+  {
+    "id": "deal_642093",
+    "properties": {
+      "dealname": "Horizon Education \u2014 Professional Services Add-On",
+      "amount": "36000",
+      "dealstage": "negotiation",
+      "dealstage_label": "Negotiation",
+      "pipeline": "default",
+      "closedate": "2026-03-08",
+      "createdate": "2025-12-24T06:37:35.658277",
+      "hs_lastmodifieddate": "2026-01-27T06:37:35.658278",
+      "hubspot_owner_id": "owner_101",
+      "description": "Active deal with Horizon Education for platform access."
+    },
+    "associations": {
+      "company": "horizon_education",
+      "contact": "contact_575512"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Negotiation call. Horizon Education wants a 15% discount. Offered 10% for annual commitment + case study agreement. They're checking with procurement. Decision expected next week.",
+        "timestamp": "2026-02-26T06:37:35.658291"
+      },
+      {
+        "type": "NOTE",
+        "body": "Competitor alert: Horizon Education is also evaluating CompetitorAlpha. Their demo is next Tuesday. Need to send battle card info to champion and reinforce our AI coaching differentiator.",
+        "timestamp": "2026-02-23T06:37:35.658292"
+      },
+      {
+        "type": "NOTE",
+        "body": "Champion call with David. They confirmed the CFO is the economic buyer. CFO cares about: ROI timeline, implementation disruption, and integration with existing stack. Prepping a CFO-specific one-pager.",
+        "timestamp": "2026-02-15T06:37:35.658289"
+      },
+      {
+        "type": "NOTE",
+        "body": "Demo completed. David was impressed with the AI roleplay feature. Their CTO asked about data security and integration with HubSpot. Sent follow-up with SOC 2 report and integration docs. Next step: technical review with their IT team.",
+        "timestamp": "2026-02-12T06:37:35.658290"
+      }
+    ],
+    "_test_flag": "stale"
+  },
+  {
+    "id": "deal_df_001",
+    "properties": {
+      "dealname": "DataFlow Inc — Enterprise Platform License",
+      "amount": "156000",
+      "dealstage": "negotiation",
+      "dealstage_label": "Negotiation",
+      "pipeline": "default",
+      "closedate": "2026-04-15",
+      "createdate": "2026-01-10T09:00:00.000000",
+      "hs_lastmodifieddate": "2026-03-14T16:30:00.000000",
+      "hubspot_owner_id": "owner_101",
+      "description": "Enterprise deal with DataFlow Inc for full platform access. High-value opportunity with strong technical fit."
+    },
+    "associations": {
+      "company": "dataflow_inc",
+      "contact": "contact_df_001"
+    },
+    "activities": [
+      {
+        "type": "CALL",
+        "body": "Final negotiation call with Priya and Marcus. They've narrowed it down to us and CompetitorBeta. Main differentiator: our AI roleplay feature for onboarding new reps. They want a custom success metrics dashboard — exploring if PS can deliver this in Phase 2. Decision expected by end of week.",
+        "timestamp": "2026-03-14T16:30:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Jennifer (CFO) joined the call unexpectedly. She's concerned about implementation timeline — their Q2 sales kickoff is April 20 and they need the team trained by then. Committed to a dedicated CSM and 2-week implementation sprint. She seemed satisfied but wants it in writing.",
+        "timestamp": "2026-03-10T14:00:00.000000"
+      },
+      {
+        "type": "EMAIL",
+        "body": "Sent updated proposal with implementation guarantee and penalty clause for delayed go-live. Also included 3 customer references from similar-sized data infrastructure companies. Priya forwarded to legal within 2 hours — good sign.",
+        "timestamp": "2026-03-08T11:00:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Technical deep-dive with Marcus (CTO). Walked through our Salesforce and HubSpot integrations. He pushed hard on API rate limits and data residency. Our SOC 2 Type II and GDPR compliance docs addressed most concerns. He's now a champion internally. Key quote: 'This is the first sales tool our reps might actually use.'",
+        "timestamp": "2026-02-28T10:30:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Discovery call with Priya. DataFlow is scaling from 15 to 40 sales reps this year. Current pain: inconsistent discovery calls, new hires take 6+ months to ramp. She mentioned they lost 2 deals last quarter because reps didn't handle pricing objections well. Budget: $150-180K approved for sales enablement tools.",
+        "timestamp": "2026-01-15T14:00:00.000000"
+      }
+    ]
+  },
+  {
+    "id": "deal_df_002",
+    "properties": {
+      "dealname": "DataFlow Inc — Professional Services Engagement",
+      "amount": "45000",
+      "dealstage": "qualification",
+      "dealstage_label": "Qualification",
+      "pipeline": "default",
+      "closedate": "2026-05-01",
+      "createdate": "2026-03-05T10:00:00.000000",
+      "hs_lastmodifieddate": "2026-03-12T09:00:00.000000",
+      "hubspot_owner_id": "owner_102",
+      "description": "Professional services add-on for custom methodology implementation and advanced analytics."
+    },
+    "associations": {
+      "company": "dataflow_inc",
+      "contact": "contact_df_002"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Marcus wants to implement a custom MEDDIC scorecard for their enterprise deals. They have a unique qualification process that adds 'Technical Validation' as a required step. PS team confirmed we can customize the methodology in Week 2 of implementation.",
+        "timestamp": "2026-03-12T09:00:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Scoping call for PS engagement. DataFlow wants: (1) Custom MEDDIC implementation, (2) Salesforce activity sync, (3) Manager dashboard with team comparison views. Estimated 3-week engagement. This is contingent on deal_df_001 closing.",
+        "timestamp": "2026-03-05T10:00:00.000000"
+      }
+    ]
+  },
+  {
+    "id": "deal_ql_001",
+    "properties": {
+      "dealname": "QuantumLeap AI — Growth Plan",
+      "amount": "48000",
+      "dealstage": "demoscheduled",
+      "dealstage_label": "Demo Scheduled",
+      "pipeline": "default",
+      "closedate": "2026-04-30",
+      "createdate": "2026-02-01T11:00:00.000000",
+      "hs_lastmodifieddate": "2026-03-13T10:00:00.000000",
+      "hubspot_owner_id": "owner_103",
+      "description": "Growth plan for QuantumLeap AI's sales team. AI startup with fast-moving deal cycles."
+    },
+    "associations": {
+      "company": "quantumleap_ai",
+      "contact": "contact_ql_001"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Demo scheduled for Monday 3/17 at 2pm PT. Alex, Samantha (CEO), and 2 AEs will attend. They specifically want to see: (1) objection handling practice, (2) competitive positioning vs. larger players, (3) how we handle technical buyer personas. Prepping a custom demo flow focused on startup selling scenarios.",
+        "timestamp": "2026-03-13T10:00:00.000000"
+      },
+      {
+        "type": "CALL",
+        "body": "Call with Alex to understand their sales process. QuantumLeap sells AI solutions to mid-market — typical deal size $50-150K, 60-90 day cycles. Main challenge: their 3 AEs come from different backgrounds (enterprise, SMB, channel) and have inconsistent approaches. CEO Samantha is very hands-on and wants to standardize the pitch.",
+        "timestamp": "2026-03-01T15:00:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Inbound lead from Alex via our 'AI for Sales Teams' webinar. He mentioned Samantha (CEO) was impressed by our ROI calculator demo. They're evaluating 2 other tools but we're the front-runner because of our AI roleplay capability. Next step: discovery call to understand their methodology needs.",
+        "timestamp": "2026-02-01T11:00:00.000000"
+      }
+    ]
+  },
+  {
+    "id": "deal_ql_002",
+    "properties": {
+      "dealname": "QuantumLeap AI — Team Expansion Add-On",
+      "amount": "24000",
+      "dealstage": "discovery",
+      "dealstage_label": "Discovery",
+      "pipeline": "default",
+      "closedate": "2026-06-15",
+      "createdate": "2026-03-10T08:00:00.000000",
+      "hs_lastmodifieddate": "2026-03-14T11:00:00.000000",
+      "hubspot_owner_id": "owner_103",
+      "description": "Expansion opportunity as QuantumLeap plans to double their sales team."
+    },
+    "associations": {
+      "company": "quantumleap_ai",
+      "contact": "contact_ql_002"
+    },
+    "activities": [
+      {
+        "type": "NOTE",
+        "body": "Samantha mentioned in passing that they're hiring 3-4 more AEs in Q3. If deal_ql_001 lands and they see results, this expansion is almost guaranteed. She wants to use our platform as their standard onboarding tool. Created this deal to track the expansion opportunity separately.",
+        "timestamp": "2026-03-14T11:00:00.000000"
+      },
+      {
+        "type": "NOTE",
+        "body": "Derek (VP Sales) reached out asking about volume pricing for 10+ seats. He's building the business case for their board meeting in May. Sent him our enterprise tier pricing with custom onboarding included. This could accelerate if their Series B closes in April.",
+        "timestamp": "2026-03-10T08:00:00.000000"
+      }
+    ]
+  }
+]

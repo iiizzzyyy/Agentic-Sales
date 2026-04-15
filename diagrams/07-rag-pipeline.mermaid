@@ -1,0 +1,43 @@
+---
+title: "RAG Pipeline - Indexing and Query Flow"
+---
+graph TB
+    subgraph INDEXING["INDEXING PIPELINE - Scheduled / On-Trigger"]
+        SRC_PB["Playbooks\nManual upload"]
+        SRC_BC["Battle Cards\nManual upload"]
+        SRC_HS["HubSpot Notes\nWebhook / hourly"]
+        SRC_BQ["BigQuery Exports\nDaily scheduled"]
+        SRC_CT["Call Transcripts\nAfter each call"]
+        SRC_PD["Product Docs\nOn release"]
+
+        CHUNK_R["Recursive Chunker\n400-512 tokens, 15% overlap\nFor structured docs"]
+        CHUNK_S["Semantic Chunker\nEmbedding-based splits\nFor transcripts/notes"]
+
+        EMBED["Embedding Model\nVoyage AI 3.5\n1024 dims, int8"]
+
+        VDB_IDX["Vector DB\nQdrant / Weaviate\nHybrid index"]
+    end
+
+    SRC_PB --> CHUNK_R
+    SRC_BC --> CHUNK_R
+    SRC_PD --> CHUNK_R
+    SRC_HS --> CHUNK_S
+    SRC_CT --> CHUNK_S
+    SRC_BQ --> CHUNK_R
+    CHUNK_R --> EMBED
+    CHUNK_S --> EMBED
+    EMBED --> VDB_IDX
+
+    subgraph QUERY["QUERY PIPELINE - Every Agent Request"]
+        Q_INPUT["User Query\nfrom Slack"]
+        Q_EMBED["Embed Query\nVoyage AI 3.5"]
+        Q_HYBRID["Hybrid Search\nVector + BM25\nTop 50 results"]
+        Q_RERANK["Reranker\nCohere Rerank v4\nTop 5 results"]
+        Q_INJECT["Inject into\nLLM context\nas system message"]
+    end
+
+    Q_INPUT --> Q_EMBED --> Q_HYBRID --> Q_RERANK --> Q_INJECT
+    VDB_IDX -.->|serves| Q_HYBRID
+
+    style INDEXING fill:#1B4332,color:#fff
+    style QUERY fill:#2D3436,color:#fff

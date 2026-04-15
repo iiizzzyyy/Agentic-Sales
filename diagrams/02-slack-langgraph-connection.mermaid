@@ -1,0 +1,51 @@
+---
+title: "Slack - LangGraph Connection Flow"
+---
+sequenceDiagram
+    participant Rep as Sales Rep
+    participant Slack as Slack Workspace
+    participant Bolt as Slack Bolt SDK
+    participant LG as LangGraph Runtime
+    participant CP as Checkpointer (Postgres)
+    participant Router as Router Agent (Haiku)
+    participant Coach as Coach Agent (Sonnet)
+    participant Asst as Assistant Agent (Gemini)
+    participant MCP as MCP Tool Servers
+
+    Rep->>Slack: /coach roleplay discovery call
+    Slack->>Bolt: HTTP Event / Socket Mode
+    Bolt->>Bolt: ack() + typing indicator
+
+    Bolt->>LG: graph.ainvoke(messages, config)
+    LG->>CP: Load state for thread_id
+    CP-->>LG: Previous state (or empty)
+
+    LG->>Router: Classify intent
+    Router-->>LG: route = "coach"
+
+    LG->>Coach: Execute coach subgraph
+    Coach->>MCP: RAG retrieval (playbooks, ICP)
+    MCP-->>Coach: Relevant context chunks
+    Coach->>MCP: HubSpot (deal context)
+    MCP-->>Coach: Deal data
+    Coach-->>LG: Generated roleplay response
+
+    LG->>CP: Persist updated state
+    LG-->>Bolt: Result message
+
+    Bolt->>Slack: say(text, thread_ts)
+    Slack->>Rep: Buyer persona response in thread
+
+    Note over Rep,Slack: Rep thinks... replies in thread
+    Rep->>Slack: Thread reply with sales pitch
+
+    Slack->>Bolt: message event (thread)
+    Bolt->>LG: graph.ainvoke(new_message, same thread_id)
+    LG->>CP: Load persisted state (mid-roleplay)
+    CP-->>LG: Full roleplay state restored
+    LG->>Coach: Resume at score rep turn node
+    Coach-->>LG: Score + next buyer response
+    LG->>CP: Persist updated state
+    LG-->>Bolt: Next turn response
+    Bolt->>Slack: say(response, thread_ts)
+    Slack->>Rep: Next roleplay turn

@@ -1,0 +1,60 @@
+{
+  "thread_id": "thread_apex_002",
+  "subject": "Re: Apex Manufacturing \u2014 Contract & Next Steps",
+  "associations": {
+    "company_id": "apex_manufacturing",
+    "deal_id": "deal_982392",
+    "contact_ids": ["contact_311836"]
+  },
+  "participants": [
+    {
+      "name": "Jordan Mitchell",
+      "email": "jordan.mitchell@ourcompany.com",
+      "role": "rep"
+    },
+    {
+      "name": "Michael Kim",
+      "email": "michael.kim@apexmfg.com",
+      "role": "prospect"
+    },
+    {
+      "name": "David Rodriguez",
+      "email": "david.rodriguez@apexmfg.com",
+      "role": "prospect"
+    }
+  ],
+  "messages": [
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "michael.kim@apexmfg.com",
+        "david.rodriguez@apexmfg.com"
+      ],
+      "cc": [],
+      "date": "2026-02-26T08:30:00Z",
+      "body": "David, Michael,\n\nThank you for a productive conversation yesterday. As agreed, here's the updated proposal:\n\n- 50 users, Enterprise Plan\n- $152,000/year (2-year commitment)\n- Priority onboarding included (normally $15K)\n- 90-day performance guarantee with exit clause\n- Joint case study agreement\n\nI've attached:\n1. Updated proposal PDF\n2. Master Service Agreement (MSA)\n3. Custom ROI model for Apex (board-ready format)\n\nMichael \u2014 please send your legal team's standard addendum when ready. We'll turn around a redline within 48 hours.\n\nDavid \u2014 the ROI deck projects a 3.5-month payback. Happy to walk through it before your board presentation if helpful.\n\nLooking forward to getting this across the finish line.\n\nBest,\nJordan"
+    },
+    {
+      "from": "michael.kim@apexmfg.com",
+      "to": [
+        "jordan.mitchell@ourcompany.com"
+      ],
+      "cc": [
+        "david.rodriguez@apexmfg.com"
+      ],
+      "date": "2026-02-27T11:45:00Z",
+      "body": "Jordan,\n\nI've sent the MSA to our legal team. They'll have our standard addendum back by Monday.\n\nTwo things from legal's initial review:\n1. They want to adjust the liability cap from 1x to 2x annual contract value\n2. They're asking about GDPR compliance for our EU operations (we have a manufacturing plant in Germany)\n\nCan you address the GDPR point? Our DPO will likely want to speak with your privacy team directly.\n\nMichael"
+    },
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "michael.kim@apexmfg.com"
+      ],
+      "cc": [
+        "david.rodriguez@apexmfg.com"
+      ],
+      "date": "2026-02-27T14:20:00Z",
+      "body": "Michael,\n\nGood news on both:\n\n1. Liability cap: We can accommodate 2x \u2014 I've already flagged it with our legal team and they've approved.\n\n2. GDPR: We are fully GDPR-compliant. We have EU data processing agreements, we support data residency in EU (Frankfurt region), and we can provide our Article 30 records. I'll have our privacy team reach out to your DPO directly \u2014 can you share their contact info?\n\nWe're also preparing the Data Processing Agreement (DPA) which covers all GDPR requirements. I'll send that with the redline.\n\nOn track for signatures by end of next week?\n\nJordan"
+    }
+  ]
+}

@@ -1,0 +1,652 @@
+%% ============================================================
+%% SALES AI AGENTS — ARCHITECTURE DIAGRAMS (Mermaid)
+%% All wiring details for the Slack-based Coach & Assistant agents
+%% ============================================================
+
+
+%% ============================================================
+%% DIAGRAM 1: Full System Architecture (Top-Level)
+%% ============================================================
+
+---
+title: "Full System Architecture"
+---
+graph TB
+    subgraph SLACK["SLACK WORKSPACE"]
+        direction LR
+        S1["Rep DMs bot"]
+        S2["/coach command"]
+        S3["/assist command"]
+        S4["#pipeline channel"]
+        S5["Thread replies"]
+        S6["Button clicks"]
+    end
+
+    subgraph BOLT["SLACK BOLT SDK (Python)"]
+        B1["Event Handlers<br/>message, app_mention,<br/>slash_command, action"]
+        B2["Middleware<br/>auth, rate limiting, logging"]
+        B3["Response Formatter<br/>LangGraph output → Block Kit"]
+    end
+
+    subgraph TRIAGE["HIVE MIND TRIAGE<br/>LangGraph Subgraph"]
+        T1["Parse Input"]
+        T2["Classify Complexity<br/><b>LLM: qwen3.5:397b-cloud</b>"]
+        T3["Route: DIRECT/WORKFLOW/COMPLEX"]
+    end
+
+    subgraph COACH["COACH AGENT<br/>LangGraph Subgraph (Typed)"]
+        C1["Roleplay Workflow"]
+        C2["Post-Call Feedback"]
+        C3["Meeting Prep"]
+        C_LLM["<b>LLM: qwen3.5:397b-cloud</b>"]
+    end
+
+    subgraph ASSISTANT["ASSISTANT AGENT<br/>LangGraph Subgraph (Typed)"]
+        A1["Research Brief"]
+        A2["CRM Update"]
+        A3["Email Draft"]
+        A4["Pipeline Health"]
+        A_LLM["<b>LLM: qwen3.5:397b-cloud</b>"]
+    end
+
+    subgraph HIVEMIND["HIVE MIND ORCHESTRATION"]
+        PM["PM Agent<br/>Task Decomposition"]
+        DAG["DAG Executor<br/>Parallel Batches"]
+        REV["Reviewer<br/>Quality Check"]
+    end
+
+    subgraph TOOLS["SHARED TOOL LAYER (via MCP)"]
+        T1["HubSpot MCP<br/>Official Beta"]
+        T2["BigQuery MCP<br/>Google Managed"]
+        T3["Gmail MCP<br/>Community"]
+        T4["Web Search<br/>Tavily"]
+        T5["Vector DB (RAG)<br/>Qdrant/Weaviate"]
+        T6["Memory Store<br/>Postgres/Redis"]
+    end
+
+    SLACK --> BOLT
+    BOLT --> TRIAGE
+    T1 --> T2 --> T3
+    T3 -->|DIRECT| TOOLS
+    T3 -->|WORKFLOW| COACH
+    T3 -->|COMPLEX| HIVEMIND
+    COACH --> TOOLS
+    ASSISTANT --> TOOLS
+    PM --> DAG --> REV
+    HIVEMIND --> TOOLS
+
+    style SLACK fill:#4A154B,color:#fff
+    style BOLT fill:#2C5F2D,color:#fff
+    style ROUTER fill:#FF6B35,color:#fff
+    style COACH fill:#6B5CE7,color:#fff
+    style ASSISTANT fill:#0077B6,color:#fff
+    style TOOLS fill:#2D3436,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 2: Slack → LangGraph Connection Flow
+%% ============================================================
+
+---
+title: "Slack ↔ LangGraph Connection Flow"
+---
+sequenceDiagram
+    participant Rep as Sales Rep
+    participant Slack as Slack Workspace
+    participant Bolt as Slack Bolt SDK
+    participant LG as LangGraph Runtime
+    participant CP as Checkpointer<br/>(Postgres)
+    participant Router as Router Agent<br/>(Haiku)
+    participant Coach as Coach Agent<br/>(Claude Sonnet)
+    participant Asst as Assistant Agent<br/>(Gemini)
+    participant MCP as MCP Tool Servers
+
+    Rep->>Slack: /coach roleplay discovery call
+    Slack->>Bolt: HTTP Event / Socket Mode
+    Bolt->>Bolt: ack() + typing indicator
+
+    Bolt->>LG: graph.ainvoke(messages, config={thread_id})
+    LG->>CP: Load state for thread_id
+    CP-->>LG: Previous state (or empty)
+
+    LG->>Router: Classify intent
+    Router-->>LG: route = "coach"
+
+    LG->>Coach: Execute coach subgraph
+    Coach->>MCP: RAG retrieval (playbooks, ICP)
+    MCP-->>Coach: Relevant context chunks
+    Coach->>MCP: HubSpot (deal context)
+    MCP-->>Coach: Deal data
+    Coach-->>LG: Generated roleplay response
+
+    LG->>CP: Persist updated state
+    LG-->>Bolt: Result message
+
+    Bolt->>Slack: say(text, thread_ts)
+    Slack->>Rep: Buyer persona response in thread
+
+    Note over Rep,Slack: Rep thinks... replies in thread
+    Rep->>Slack: Thread reply with sales pitch
+
+    Slack->>Bolt: message event (thread)
+    Bolt->>LG: graph.ainvoke(new_message, same thread_id)
+    LG->>CP: Load persisted state (mid-roleplay)
+    CP-->>LG: Full roleplay state restored
+    LG->>Coach: Resume at "score rep's turn" node
+    Coach-->>LG: Score + next buyer response
+    LG->>CP: Persist updated state
+    LG-->>Bolt: Next turn response
+    Bolt->>Slack: say(response, thread_ts)
+    Slack->>Rep: Next roleplay turn
+
+
+%% ============================================================
+%% DIAGRAM 3: Hive Mind Triage Graph
+%% ============================================================
+
+---
+title: "Hive Mind Triage — Complexity Classification & Routing"
+---
+graph LR
+    START((Start)) --> PARSE["Parse Input<br/>Extract text, user_id,<br/>channel context"]
+    PARSE --> CLASSIFY["Classify Complexity<br/><b>qwen3.5:397b-cloud</b><br/>Local inference"]
+    CLASSIFY --> DECIDE{Complexity?}
+
+    DECIDE -->|DIRECT<br/>single lookup| DIRECT["Direct Executor<br/>Single tool call"]
+    DECIDE -->|WORKFLOW<br/>single workflow| COACH["COACH<br/>Subgraph"]
+    DECIDE -->|COMPLEX<br/>multi-step| PM["PM Agent<br/>Task Decomposition"]
+    DECIDE -->|ambiguous /<br/>unclear| CLARIFY["Ask User<br/>to Clarify"]
+
+    DIRECT --> END((End))
+    COACH --> END((End))
+    PM --> DAG["DAG Executor<br/>Parallel Batches"]
+    DAG --> REV["Reviewer<br/>Quality Gate"]
+    REV --> END((End))
+    CLARIFY --> END((End))
+
+    style DIRECT fill:#2C5F2D,color:#fff
+    style COACH fill:#6B5CE7,color:#fff
+    style PM fill:#FF6B35,color:#fff
+    style DAG fill:#A78BFA,color:#fff
+    style REV fill:#EF4444,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 4: Coach Agent Graph (Detailed Workflows)
+%% ============================================================
+
+---
+title: "Coach Agent — Detailed Workflow Graph"
+---
+graph TB
+    START((Start)) --> CLASSIFY_REQ["Classify Request Type"]
+    CLASSIFY_REQ --> LOAD_PROFILE["Load Rep Profile<br/>(Postgres/BigQuery)"]
+    LOAD_PROFILE --> CHOOSE{Choose Workflow}
+
+    CHOOSE -->|roleplay request| RP_START["ROLEPLAY WORKFLOW"]
+    CHOOSE -->|call feedback| PC_START["POST-CALL FEEDBACK"]
+    CHOOSE -->|meeting prep| PREP_START["PREP WORKFLOW"]
+
+    subgraph ROLEPLAY["Roleplay Workflow"]
+        RP_START --> RP_RAG["RAG: Pull ICP,<br/>objections, battle cards"]
+        RP_RAG --> RP_PERSONA["Generate Buyer Persona<br/><b>Claude Sonnet 4.5</b>"]
+        RP_PERSONA --> RP_BUYER["Generate Buyer Response"]
+        RP_BUYER --> RP_SEND["Send to Slack as Buyer"]
+        RP_SEND --> RP_WAIT["⏸️ WAIT for Rep Reply<br/><i>Durable execution:<br/>graph pauses, state persists</i>"]
+        RP_WAIT --> RP_SCORE["Score Rep's Turn<br/><b>Claude Sonnet 4.5</b>"]
+        RP_SCORE --> RP_CHECK{More turns?}
+        RP_CHECK -->|yes| RP_BUYER
+        RP_CHECK -->|no| RP_DEBRIEF["Generate Final Debrief<br/>Scores + Action Items"]
+    end
+
+    subgraph POSTCALL["Post-Call Feedback"]
+        PC_START --> PC_RAG1["RAG: Pull call<br/>transcript/notes"]
+        PC_RAG1 --> PC_RAG2["RAG: Pull playbook<br/>scoring criteria"]
+        PC_RAG2 --> PC_SCORE["Score Against Rubric<br/><b>Claude Sonnet 4.5</b>"]
+        PC_SCORE --> PC_ACTIONS["Generate Action Items"]
+        PC_ACTIONS --> PC_UPDATE["Update Rep Skill Profile"]
+    end
+
+    subgraph MEETPREP["Meeting Prep"]
+        PREP_START --> PREP_HS["HubSpot: Get Deal<br/>+ Contact History"]
+        PREP_HS --> PREP_RAG["RAG: Pull Playbook<br/>Section"]
+        PREP_RAG --> PREP_WEB["Web Search: Company<br/>News + Intel"]
+        PREP_WEB --> PREP_BQ["BigQuery: Historical<br/>Deal Patterns"]
+        PREP_BQ --> PREP_GEN["Generate Prep Brief<br/><b>Claude Sonnet 4.5</b>"]
+    end
+
+    RP_DEBRIEF --> UPDATE_PROFILE
+    PC_UPDATE --> UPDATE_PROFILE
+    PREP_GEN --> FORMAT
+
+    UPDATE_PROFILE["Update Rep Profile<br/>(Postgres/BigQuery)"] --> FORMAT["Format & Return<br/>to Slack"]
+    FORMAT --> END_NODE((End))
+
+    style ROLEPLAY fill:#6B5CE7,color:#fff
+    style POSTCALL fill:#8B5CF6,color:#fff
+    style MEETPREP fill:#A78BFA,color:#fff
+    style RP_WAIT fill:#FF6B35,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 5: Assistant Agent Graph (Detailed Workflows)
+%% ============================================================
+
+---
+title: "Assistant Agent — Detailed Workflow Graph"
+---
+graph TB
+    START((Start)) --> CLASSIFY["Classify Request"]
+    CLASSIFY --> CHOOSE{Choose Workflow}
+
+    CHOOSE -->|company/deal research| RES
+    CHOOSE -->|update CRM| CRM
+    CHOOSE -->|draft email| EMAIL
+    CHOOSE -->|pipeline status| PIPE
+
+    subgraph RESEARCH["Research Brief Workflow"]
+        RES["Start Research"] --> RES_HS["HubSpot MCP:<br/>Get Deal + Contact"]
+        RES_HS --> RES_WEB["Web Search (Tavily):<br/>Company News"]
+        RES_WEB --> RES_BQ["BigQuery:<br/>Historical Data"]
+        RES_BQ --> RES_RAG["RAG: Pull<br/>Playbook Context"]
+        RES_RAG --> RES_GEN["Generate Brief<br/><b>Gemini 2.5 Pro</b>"]
+    end
+
+    subgraph CRM_UPDATE["CRM Update Workflow"]
+        CRM["Start CRM Update"] --> CRM_PARSE["Parse Slack<br/>Message Content"]
+        CRM_PARSE --> CRM_EXTRACT["Extract Entities<br/>(names, companies, actions)"]
+        CRM_EXTRACT --> CRM_HS["HubSpot MCP:<br/>Update Contact/Deal"]
+        CRM_HS --> CRM_CONFIRM["Confirm Update<br/>to User in Slack"]
+    end
+
+    subgraph EMAIL_DRAFT["Email Draft Workflow"]
+        EMAIL["Start Email Draft"] --> EMAIL_HS["HubSpot MCP:<br/>Get Deal Context"]
+        EMAIL_HS --> EMAIL_RAG["RAG: Pull Email<br/>Templates"]
+        EMAIL_RAG --> EMAIL_GEN["Generate Draft<br/><b>Gemini 2.5 Pro</b>"]
+        EMAIL_GEN --> EMAIL_GMAIL["Gmail MCP:<br/>Create Draft"]
+        EMAIL_GMAIL --> EMAIL_CONFIRM["Send Preview<br/>to User in Slack"]
+    end
+
+    subgraph PIPELINE["Pipeline Health Workflow"]
+        PIPE["Start Pipeline Check"] --> PIPE_HS["HubSpot MCP:<br/>Pull All Open Deals"]
+        PIPE_HS --> PIPE_BQ["BigQuery:<br/>Win Rate Trends"]
+        PIPE_BQ --> PIPE_FLAG["Flag: Stale Deals,<br/>Missing Data,<br/>Overdue Tasks"]
+        PIPE_FLAG --> PIPE_GEN["Generate Digest<br/><b>Gemini 2.5 Pro</b>"]
+    end
+
+    RES_GEN --> FORMAT
+    CRM_CONFIRM --> FORMAT
+    EMAIL_CONFIRM --> FORMAT
+    PIPE_GEN --> FORMAT
+
+    FORMAT["Format & Return<br/>to Slack"] --> END_NODE((End))
+
+    style RESEARCH fill:#0077B6,color:#fff
+    style CRM_UPDATE fill:#0096C7,color:#fff
+    style EMAIL_DRAFT fill:#00B4D8,color:#fff
+    style PIPELINE fill:#48CAE4,color:#000
+
+
+%% ============================================================
+%% DIAGRAM 6: MCP Tool Wiring
+%% ============================================================
+
+---
+title: "MCP Tool Wiring — How Agents Connect to Services"
+---
+graph LR
+    subgraph AGENTS["LangGraph Agents (MCP Clients)"]
+        ROUTER["Router<br/>(Haiku)"]
+        COACH["Coach<br/>(Claude Sonnet)"]
+        ASSISTANT["Assistant<br/>(Gemini)"]
+    end
+
+    subgraph MCP_SERVERS["MCP Servers (Standalone Processes)"]
+        HS["🟠 HubSpot MCP Server<br/><i>Official Public Beta</i><br/>+ shinzo-labs/hubspot-mcp<br/><br/>Read: contacts, companies,<br/>deals, tickets, notes<br/>Write: create/update deals,<br/>contacts, log activities<br/>Auth: OAuth 2.0"]
+
+        BQ["🔷 BigQuery MCP Server<br/><i>Google Official Managed</i><br/><br/>Query: Run SQL<br/>Schema: Inspect tables<br/>Auth: Service Account<br/>Auto-enabled since Mar 2026"]
+
+        GM["📧 Gmail MCP Server<br/><i>shinzo-labs/gmail-mcp</i><br/>or GongRzhe/Gmail-MCP<br/><br/>Read: search, get messages<br/>Write: create drafts, send<br/>Auth: OAuth 2.0 via Google"]
+
+        WS["🔍 Web Search MCP<br/><i>Tavily MCP Server</i><br/><br/>Search: web queries<br/>Extract: page content<br/>Auth: API key"]
+
+        VDB["💾 Vector DB MCP<br/><i>Custom wrapper</i><br/><br/>Search: semantic + keyword<br/>Index: add/update docs<br/>Target: Qdrant or Weaviate"]
+    end
+
+    COACH ---|MCP Protocol| HS
+    COACH ---|MCP Protocol| BQ
+    COACH ---|MCP Protocol| WS
+    COACH ---|MCP Protocol| VDB
+    ASSISTANT ---|MCP Protocol| HS
+    ASSISTANT ---|MCP Protocol| BQ
+    ASSISTANT ---|MCP Protocol| GM
+    ASSISTANT ---|MCP Protocol| WS
+    ASSISTANT ---|MCP Protocol| VDB
+
+    style AGENTS fill:#2D3436,color:#fff
+    style MCP_SERVERS fill:#1a1a2e,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 7: RAG Pipeline — Indexing + Query
+%% ============================================================
+
+---
+title: "RAG Pipeline — Indexing & Query Flow"
+---
+graph TB
+    subgraph INDEXING["INDEXING PIPELINE (Scheduled / On-Trigger)"]
+        direction LR
+        SRC_PB["📄 Playbooks<br/><i>Manual upload</i>"]
+        SRC_BC["⚔️ Battle Cards<br/><i>Manual upload</i>"]
+        SRC_HS["🟠 HubSpot Notes<br/><i>Webhook / hourly</i>"]
+        SRC_BQ["🔷 BigQuery Exports<br/><i>Daily scheduled</i>"]
+        SRC_CT["🎙️ Call Transcripts<br/><i>After each call</i>"]
+        SRC_PD["📦 Product Docs<br/><i>On release</i>"]
+
+        CHUNK_R["Recursive Chunker<br/>400-512 tokens, 15% overlap<br/><i>For structured docs</i>"]
+        CHUNK_S["Semantic Chunker<br/>Embedding-based splits<br/><i>For transcripts/notes</i>"]
+
+        EMBED["Embedding Model<br/><b>Voyage AI 3.5</b><br/>1024 dims, int8"]
+
+        VDB_IDX["Vector DB<br/><b>Qdrant / Weaviate</b><br/>Hybrid index"]
+    end
+
+    SRC_PB & SRC_BC & SRC_PD --> CHUNK_R
+    SRC_HS & SRC_CT --> CHUNK_S
+    SRC_BQ --> CHUNK_R
+    CHUNK_R & CHUNK_S --> EMBED --> VDB_IDX
+
+    subgraph QUERY["QUERY PIPELINE (Every Agent Request)"]
+        direction LR
+        Q_INPUT["User Query<br/><i>from Slack</i>"]
+        Q_EMBED["Embed Query<br/><b>Voyage AI 3.5</b>"]
+        Q_HYBRID["Hybrid Search<br/>Vector + BM25<br/>Top 50 results"]
+        Q_RERANK["Reranker<br/><b>Cohere Rerank v4</b><br/>Top 5 results"]
+        Q_INJECT["Inject into<br/>LLM context<br/>as system message"]
+    end
+
+    Q_INPUT --> Q_EMBED --> Q_HYBRID --> Q_RERANK --> Q_INJECT
+    VDB_IDX -.->|serves| Q_HYBRID
+
+    style INDEXING fill:#1B4332,color:#fff
+    style QUERY fill:#2D3436,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 8: Memory Architecture (4 Layers)
+%% ============================================================
+
+---
+title: "4-Layer Memory Architecture"
+---
+graph TB
+    subgraph L1["Layer 1: CONVERSATION MEMORY"]
+        L1_STORE["LangGraph Checkpointer<br/>(Postgres / Redis)"]
+        L1_CONTENT["Full message history<br/>Agent state mid-workflow<br/>Roleplay scores in progress"]
+        L1_MAP["Slack thread_ts → LangGraph thread_id"]
+        L1_LIFE["Lifetime: Duration of thread/session"]
+    end
+
+    subgraph L2["Layer 2: REP PROFILE MEMORY"]
+        L2_STORE["Postgres / BigQuery"]
+        L2_CONTENT["Skill scores per competency<br/>Weak areas & coaching history<br/>Preferred coaching style<br/>Completed roleplays & ratings"]
+        L2_MAP["Slack user_id → rep profile record"]
+        L2_LIFE["Lifetime: Persistent (grows over time)"]
+    end
+
+    subgraph L3["Layer 3: TEAM KNOWLEDGE"]
+        L3_STORE["Vector DB<br/>(Qdrant / Weaviate)"]
+        L3_CONTENT["Playbooks & battle cards<br/>Call transcripts & best practices<br/>Deal patterns & win/loss analysis<br/>ICP definitions"]
+        L3_MAP["Accessed via RAG at query time"]
+        L3_LIFE["Lifetime: Persistent, updated on schedule"]
+    end
+
+    subgraph L4["Layer 4: LIVE DATA"]
+        L4_STORE["External APIs via MCP"]
+        L4_CONTENT["Current deal status (HubSpot)<br/>Latest emails (Gmail)<br/>Fresh analytics (BigQuery)<br/>Company news (Web Search)"]
+        L4_MAP["Accessed via MCP tool calls"]
+        L4_LIFE["Lifetime: Real-time / short TTL cache"]
+    end
+
+    L1 ---|per request| AGENT["Agent<br/>Runtime"]
+    L2 ---|per session start| AGENT
+    L3 ---|per RAG query| AGENT
+    L4 ---|per tool call| AGENT
+
+    style L1 fill:#6B5CE7,color:#fff
+    style L2 fill:#0077B6,color:#fff
+    style L3 fill:#1B4332,color:#fff
+    style L4 fill:#FF6B35,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 9: Deployment Architecture
+%% ============================================================
+
+---
+title: "Deployment Architecture — GCP Self-Hosted"
+---
+graph TB
+    subgraph GCP["Google Cloud Platform"]
+        subgraph COMPUTE["Cloud Run / GKE"]
+            APP["FastAPI + Slack Bolt<br/>+ LangGraph Runtime<br/>+ MCP Clients"]
+        end
+
+        subgraph DATA["Data Layer"]
+            CSQL["Cloud SQL<br/>(Postgres)<br/>• Checkpoints<br/>• Rep profiles<br/>• App state"]
+            MEMSTORE["Memorystore<br/>(Redis)<br/>• Session cache<br/>• Rate limiting"]
+        end
+
+        subgraph GOOGLE_APIS["Google APIs (same project)"]
+            BQ_API["BigQuery API"]
+            GMAIL_API["Gmail API"]
+            GEMINI_API["Gemini API<br/>(Vertex AI)"]
+        end
+    end
+
+    subgraph EXTERNAL["External Services"]
+        QDRANT["Qdrant Cloud<br/>Vector DB + RAG"]
+        CLAUDE_API["Claude API<br/>(Anthropic)"]
+        TAVILY["Tavily API<br/>Web Search"]
+        HUBSPOT_API["HubSpot API"]
+        COHERE_API["Cohere API<br/>Reranking"]
+        VOYAGE_API["Voyage AI<br/>Embeddings"]
+    end
+
+    SLACK_EXT["Slack<br/>Events API"] -->|webhooks| APP
+
+    APP --> CSQL
+    APP --> MEMSTORE
+    APP --> BQ_API
+    APP --> GMAIL_API
+    APP --> GEMINI_API
+    APP --> QDRANT
+    APP --> CLAUDE_API
+    APP --> TAVILY
+    APP --> HUBSPOT_API
+    APP --> COHERE_API
+    APP --> VOYAGE_API
+
+    style GCP fill:#4285F4,color:#fff
+    style EXTERNAL fill:#2D3436,color:#fff
+    style COMPUTE fill:#0F9D58,color:#fff
+    style DATA fill:#DB4437,color:#fff
+    style GOOGLE_APIS fill:#F4B400,color:#000
+
+
+%% ============================================================
+%% DIAGRAM 10: Coach Roleplay — Multi-Turn Durable Execution
+%% ============================================================
+
+---
+title: "Coach Roleplay — Multi-Turn Loop with Durable Execution"
+---
+stateDiagram-v2
+    [*] --> ParseRequest: Rep sends /coach roleplay
+    ParseRequest --> LoadProfile: Load rep skill profile
+    LoadProfile --> RAGRetrieval: Pull ICP, objections, battle cards
+
+    RAGRetrieval --> GeneratePersona: Create buyer persona
+    GeneratePersona --> BuyerResponse: Generate buyer's opening
+
+    BuyerResponse --> SendToSlack: Post in Slack thread
+    SendToSlack --> WaitForReply: ⏸️ DURABLE PAUSE
+
+    note right of WaitForReply
+        Graph state persisted to Postgres.
+        Can resume hours/days later.
+        Slack thread_ts = graph thread_id.
+    end note
+
+    WaitForReply --> ScoreRepTurn: Rep replies in thread
+    ScoreRepTurn --> CheckTurns: More turns needed?
+
+    CheckTurns --> BuyerResponse: Yes — continue roleplay
+    CheckTurns --> GenerateDebrief: No — end roleplay
+
+    GenerateDebrief --> UpdateProfile: Save scores to rep profile
+    UpdateProfile --> FormatSlack: Post debrief in thread
+    FormatSlack --> [*]
+
+
+%% ============================================================
+%% DIAGRAM 11: Implementation Timeline (Gantt)
+%% ============================================================
+
+---
+title: "Implementation Timeline — 14 Weeks"
+---
+gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+
+    section Phase 1 — Foundation
+    Slack app + Bolt SDK setup          :p1a, 2026-03-10, 5d
+    LangGraph project scaffold          :p1b, after p1a, 5d
+    HubSpot MCP connection              :p1c, after p1a, 3d
+    BigQuery MCP connection             :p1d, after p1a, 3d
+    ChromaDB local RAG prototype        :p1e, after p1b, 5d
+    /research and /deal commands        :p1f, after p1e, 5d
+
+    section Phase 2 — Assistant MVP
+    Assistant subgraph (Gemini)         :p2a, 2026-03-31, 5d
+    Research brief workflow             :p2b, after p2a, 5d
+    Email draft + Gmail MCP            :p2c, after p2b, 5d
+    Pipeline health alerts             :p2d, after p2b, 3d
+    Migrate to Qdrant/Weaviate          :p2e, after p2a, 7d
+    Voyage AI embeddings setup          :p2f, after p2e, 3d
+
+    section Phase 3 — Coach MVP
+    Coach subgraph (Claude Sonnet)      :p3a, 2026-04-21, 5d
+    Roleplay durable execution          :p3b, after p3a, 10d
+    Index playbooks + battle cards      :p3c, after p3a, 5d
+    Post-call feedback workflow         :p3d, after p3b, 5d
+    Rep profile storage                 :p3e, after p3a, 5d
+    Cohere Rerank integration           :p3f, after p3c, 3d
+
+    section Phase 4 — Intelligence
+    BigQuery analytics integration      :p4a, 2026-05-19, 5d
+    Manager weekly digest              :p4b, after p4a, 5d
+    Cross-agent coordination           :p4c, after p4b, 5d
+    Semantic chunking for transcripts   :p4d, after p4a, 5d
+    Observability (Langfuse/LangSmith)  :p4e, after p4c, 5d
+    Load testing + cost optimization    :p4f, after p4e, 5d
+
+
+%% ============================================================
+%% DIAGRAM 12: Hive Mind Orchestration Flow
+%% ============================================================
+
+---
+title: "Hive Mind Orchestration — Multi-Agent Coordination"
+---
+graph TB
+    START([User Request]) --> TRIAGE["HIVE MIND TRIAGE<br/><b>qwen3.5:397b-cloud</b>"]
+
+    TRIAGE -->|DIRECT<br/>"Show pipeline"| DEXEC["DIRECT EXECUTOR<br/>Single tool call"]
+    TRIAGE -->|WORKFLOW<br/>"Roleplay call"| COACH["COACH AGENT<br/>Typed subgraph"]
+    TRIAGE -->|WORKFLOW<br/>"Research company"| ASSIST["ASSISTANT AGENT<br/>Typed subgraph"]
+    TRIAGE -->|COMPLEX<br/>"Prepare for QBR"| PM["PM AGENT<br/>Task decomposition"]
+
+    DEXEC --> RESPOND[Respond to User]
+    COACH --> RESPOND
+    ASSIST --> RESPOND
+
+    PM --> TASKGRAPH["TaskGraph DAG<br/>Typed tasks + dependencies"]
+    TASKGRAPH --> BATCH1["Batch 1: Parallel<br/>Fetch data sources"]
+    BATCH1 --> BATCH2["Batch 2: Sequential<br/>Analyze patterns"]
+    BATCH2 --> BATCH3["Batch 3: Generate<br/>QBR deck + summary"]
+
+    BATCH3 --> REVIEWER["REVIEWER AGENT<br/>Quality validation"]
+    REVIEWER -->|APPROVED| RESPOND
+    REVIEWER -->|CHANGES REQUIRED| BATCH3
+
+    subgraph MEMORY["MEMORY SYSTEM (SQLite)"]
+        LESSONS["Project Lessons"]
+        PREFS["User Preferences"]
+        FAILURES["Execution Failures"]
+        PATTERNS["Successful Patterns"]
+    end
+
+    PM -.->|inject context| MEMORY
+    REVIEWER -.->|extract lessons| MEMORY
+
+    style TRIAGE fill:#FF6B35,color:#fff
+    style PM fill:#6B5CE7,color:#fff
+    style REVIEWER fill:#EF4444,color:#fff
+    style MEMORY fill:#1B4332,color:#fff
+
+
+%% ============================================================
+%% DIAGRAM 13: Data Flow — End-to-End for a Coaching Request
+%% ============================================================
+
+---
+title: "End-to-End Data Flow: Rep Asks for Meeting Prep"
+---
+sequenceDiagram
+    participant Rep as Sales Rep
+    participant Slack as Slack
+    participant Bolt as Bolt SDK
+    participant Triage as Triage<br/>(qwen3.5:397b-cloud)
+    participant Coach as Coach<br/>(qwen3.5:397b-cloud)
+    participant RAG as RAG Pipeline<br/>(Voyage + Qdrant)
+    participant HS as HubSpot<br/>MCP
+    participant Web as Web Search<br/>MCP
+    participant BQ as BigQuery<br/>MCP
+    participant Mem as Memory<br/>(SQLite)
+
+    Rep->>Slack: /coach prep for QBR with Acme Corp
+    Slack->>Bolt: slash_command event
+    Bolt->>Triage: Classify complexity
+
+    Triage->>Mem: Inject user preferences
+    Mem-->>Triage: User prefers MEDDIC
+
+    Triage-->>Bolt: complexity = WORKFLOW, route = coach
+
+    Bolt->>Coach: Execute prep workflow
+
+    par Parallel data gathering
+        Coach->>HS: Get Acme Corp deals, contacts, recent notes
+        HS-->>Coach: 3 open deals, 12 contacts, 8 recent notes
+    and
+        Coach->>RAG: Search "QBR preparation" + "enterprise accounts"
+        RAG-->>Coach: QBR playbook section + enterprise best practices
+    and
+        Coach->>Web: Search "Acme Corp latest news 2026"
+        Web-->>Coach: Recent funding round, new CTO hired
+    and
+        Coach->>BQ: SELECT win_rate, avg_deal_size FROM deals WHERE company='Acme Corp'
+        BQ-->>Coach: 67% win rate, $45K avg deal size
+    end
+
+    Coach->>Coach: Synthesize prep brief<br/>(qwen3.5:397b-cloud)
+    Coach-->>Bolt: Formatted prep brief
+
+    Bolt->>Slack: Block Kit message with:<br/>• Account summary<br/>• Key talking points<br/>• Risk areas<br/>• Suggested agenda<br/>• Recent news highlights
+
+    Slack->>Rep: Meeting prep brief in DM
+
+    Note over Triage,Mem: For COMPLEX requests:<br/>Triage → PM Agent → TaskGraph<br/>→ DAG Executor (parallel batches)<br/>→ Reviewer → Respond

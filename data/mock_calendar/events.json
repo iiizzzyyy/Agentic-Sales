@@ -1,0 +1,93 @@
+{
+  "events": [
+    {
+      "id": "evt_001",
+      "title": "Discovery Call - DataFlow Inc",
+      "type": "customer_meeting",
+      "start": "2026-03-16T10:00:00-07:00",
+      "end": "2026-03-16T10:45:00-07:00",
+      "attendees": ["priya.sharma@dataflow.io", "marcus.chen@dataflow.io"],
+      "deal_id": "deal_df_001",
+      "company_id": "dataflow_inc",
+      "prep_doc": "prep_dataflow_competitive_2026-03-14.md",
+      "notes": "Final negotiation - legal redlines review"
+    },
+    {
+      "id": "evt_002",
+      "title": "Product Demo - QuantumLeap AI",
+      "type": "customer_meeting",
+      "start": "2026-03-17T14:00:00-07:00",
+      "end": "2026-03-17T15:00:00-07:00",
+      "attendees": ["alex.rivera@quantumleap.ai", "samantha.park@quantumleap.ai"],
+      "deal_id": "deal_ql_001",
+      "company_id": "quantumleap_ai",
+      "prep_doc": "prep_quantumleap_demo_2026-03-17.md",
+      "notes": "Technical demo for engineering team"
+    },
+    {
+      "id": "evt_003",
+      "title": "Weekly Pipeline Review",
+      "type": "internal",
+      "start": "2026-03-16T15:00:00-07:00",
+      "end": "2026-03-16T15:30:00-07:00",
+      "attendees": [],
+      "notes": "Review Q1 pipeline health with leadership"
+    },
+    {
+      "id": "evt_004",
+      "title": "Contract Review - Velocity Retail",
+      "type": "customer_meeting",
+      "start": "2026-03-18T11:00:00-07:00",
+      "end": "2026-03-18T11:30:00-07:00",
+      "attendees": ["wei.kim@velocityretail.co", "lisa.tran@velocityretail.co"],
+      "deal_id": "deal_831953",
+      "company_id": "velocity_retail",
+      "notes": "Urgent - champion leaving end of March"
+    },
+    {
+      "id": "evt_005",
+      "title": "New Hire Sales Training",
+      "type": "training",
+      "start": "2026-03-16T09:00:00-07:00",
+      "end": "2026-03-16T09:30:00-07:00",
+      "attendees": [],
+      "cohort_id": "cohort_q1_2026",
+      "notes": "Week 2 roleplay practice"
+    },
+    {
+      "id": "evt_006",
+      "title": "QBR Prep - NovaTech Solutions",
+      "type": "customer_meeting",
+      "start": "2026-03-19T10:00:00-07:00",
+      "end": "2026-03-19T11:00:00-07:00",
+      "attendees": ["sarah.chen@novatech.io", "marcus.williams@novatech.io"],
+      "deal_id": "deal_992410",
+      "company_id": "novatech_solutions",
+      "notes": "Pilot wrap-up and expansion discussion"
+    },
+    {
+      "id": "evt_007",
+      "title": "Competitive Intel Sync",
+      "type": "internal",
+      "start": "2026-03-17T11:00:00-07:00",
+      "end": "2026-03-17T11:30:00-07:00",
+      "attendees": [],
+      "notes": "Review CompetitorAlpha positioning updates"
+    },
+    {
+      "id": "evt_008",
+      "title": "Legal Review - Apex Manufacturing",
+      "type": "customer_meeting",
+      "start": "2026-03-20T14:00:00-07:00",
+      "end": "2026-03-20T15:00:00-07:00",
+      "attendees": ["michael.kim@apexmfg.com", "david.rodriguez@apexmfg.com"],
+      "deal_id": "deal_982392",
+      "company_id": "apex_manufacturing",
+      "notes": "DPO meeting re: GDPR compliance"
+    }
+  ],
+  "user_calendar_map": {
+    "U_DEMO_REP": ["evt_001", "evt_002", "evt_003", "evt_004", "evt_006", "evt_008"],
+    "U_DEMO_MGR": ["evt_003", "evt_005", "evt_007"]
+  }
+}

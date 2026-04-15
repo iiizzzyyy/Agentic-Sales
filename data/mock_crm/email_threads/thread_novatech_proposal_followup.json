@@ -1,0 +1,81 @@
+{
+  "thread_id": "thread_novatech_001",
+  "subject": "Re: NovaTech Solutions \u2014 Professional Plan Proposal",
+  "associations": {
+    "company_id": "novatech_solutions",
+    "deal_id": "deal_992410",
+    "contact_ids": ["contact_907662"]
+  },
+  "participants": [
+    {
+      "name": "Jordan Mitchell",
+      "email": "jordan.mitchell@ourcompany.com",
+      "role": "rep"
+    },
+    {
+      "name": "Sarah Chen",
+      "email": "sarah.chen@novatech.io",
+      "role": "prospect"
+    },
+    {
+      "name": "Marcus Williams",
+      "email": "marcus.williams@novatech.io",
+      "role": "prospect"
+    }
+  ],
+  "messages": [
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "sarah.chen@novatech.io"
+      ],
+      "cc": [],
+      "date": "2026-02-19T10:15:00Z",
+      "body": "Hi Sarah,\n\nGreat speaking with you yesterday. As promised, here's the proposal for NovaTech.\n\nI've put together three options based on our conversation:\n\n- Starter (20 users): $49/user/month = $11,760/year\n- Professional (20 users): $79/user/month = $18,960/year \u2014 RECOMMENDED\n- Enterprise (20 users): $129/user/month = $30,960/year\n\nThe Professional plan includes everything you mentioned needing: AI roleplay coaching, performance analytics, HubSpot integration, and the custom playbook ingestion.\n\nI've also attached the custom ROI model we discussed \u2014 based on your numbers, the payback period is about 3.8 months.\n\nDemo is confirmed for Tuesday at 10am with you and Marcus. Looking forward to it.\n\nBest,\nJordan"
+    },
+    {
+      "from": "sarah.chen@novatech.io",
+      "to": [
+        "jordan.mitchell@ourcompany.com"
+      ],
+      "cc": [
+        "marcus.williams@novatech.io"
+      ],
+      "date": "2026-02-19T14:32:00Z",
+      "body": "Thanks Jordan, this looks thorough.\n\nI've forwarded to Marcus (cc'd) and we'll review before Tuesday. A couple of quick questions:\n\n1. The Professional plan \u2014 is that per-seat, or can we add users later if we scale to 40?\n2. Do you offer a pilot / trial period before committing annually?\n\nAlso, Marcus asked if you could include a section on data security in the demo \u2014 specifically around where call recordings are stored and who has access.\n\nSee you Tuesday.\n\nSarah"
+    },
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "sarah.chen@novatech.io"
+      ],
+      "cc": [
+        "marcus.williams@novatech.io"
+      ],
+      "date": "2026-02-19T16:05:00Z",
+      "body": "Great questions, Sarah:\n\n1. Per-seat pricing, and you can add users anytime. We typically see customers start with a core group and expand. If you commit to 40+ users from the start, I can lock in a better per-user rate \u2014 happy to discuss.\n\n2. We do a 30-day pilot with 5 reps. Full access to all features, dedicated onboarding support. No charge, no commitment.\n\nAnd absolutely on the security section for Marcus \u2014 I'll dedicate 10 minutes to our security architecture, data handling, and SOC 2 compliance. I'll also send our security whitepaper ahead of the call so he can review.\n\nJordan"
+    },
+    {
+      "from": "marcus.williams@novatech.io",
+      "to": [
+        "jordan.mitchell@ourcompany.com"
+      ],
+      "cc": [
+        "sarah.chen@novatech.io"
+      ],
+      "date": "2026-02-20T09:10:00Z",
+      "body": "Jordan,\n\nThanks for the security whitepaper \u2014 I skimmed it last night and it looks solid. I do have one concern: we're a HubSpot shop and our CRM data is sensitive. Can you walk me through exactly what data your platform reads from HubSpot and whether it stores any of it? Our legal team will want to know.\n\nAlso, is the AI coaching model trained on our data or is it a general model? I don't want our sales conversations being used to train models for your other customers.\n\nSee you at 10am.\n\nMarcus"
+    },
+    {
+      "from": "jordan.mitchell@ourcompany.com",
+      "to": [
+        "marcus.williams@novatech.io"
+      ],
+      "cc": [
+        "sarah.chen@novatech.io"
+      ],
+      "date": "2026-02-20T09:28:00Z",
+      "body": "Marcus, great questions \u2014 I'll address both in detail during the demo, but quick answers now:\n\n1. HubSpot data: We read deal records, contact info, and activity history to contextualize coaching. We do NOT store raw CRM data permanently \u2014 it's fetched in real-time via API and used in-session only. I'll show the data flow diagram today.\n\n2. AI model: Our coaching uses general models (not trained on your data). Your conversations, playbooks, and call recordings are NEVER used to train models. This is in our DPA \u2014 I'll send that over for your legal team.\n\nSee you in 30 minutes!\n\nJordan"
+    }
+  ]
+}

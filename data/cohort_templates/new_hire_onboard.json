@@ -1,0 +1,104 @@
+{
+  "template_id": "new_hire_onboard",
+  "name": "New Hire Onboarding Program",
+  "description": "4-week structured onboarding for new sales reps covering discovery, objection handling, negotiation, and closing skills.",
+  "duration_weeks": 4,
+  "graduation_requirements": {
+    "min_avg_score": 7.0,
+    "min_completion_pct": 0.9
+  },
+  "weeks": [
+    {
+      "week_number": 1,
+      "label": "Discovery Fundamentals",
+      "min_score": 6.0,
+      "scenarios": [
+        {
+          "name": "Basic Discovery Call",
+          "type": "discovery",
+          "difficulty": "beginner",
+          "persona": "Friendly mid-market prospect, open to sharing information but needs guidance on next steps.",
+          "objectives": ["Identify pain points", "Understand current solution", "Qualify budget authority"],
+          "scoring_methodology": "discovery"
+        },
+        {
+          "name": "Uncovering Hidden Pain",
+          "type": "discovery",
+          "difficulty": "intermediate",
+          "persona": "Guarded enterprise prospect who minimizes problems initially but has significant unmet needs.",
+          "objectives": ["Build rapport", "Ask probing questions", "Surface underlying challenges"],
+          "scoring_methodology": "discovery"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "label": "Objection Handling",
+      "min_score": 6.5,
+      "scenarios": [
+        {
+          "name": "Price Objection",
+          "type": "objection_handling",
+          "difficulty": "intermediate",
+          "persona": "Budget-conscious prospect who likes the product but pushes back hard on pricing.",
+          "objectives": ["Acknowledge concern", "Reframe value", "Maintain deal momentum"],
+          "scoring_methodology": "discovery"
+        },
+        {
+          "name": "Competitor Comparison",
+          "type": "objection_handling",
+          "difficulty": "intermediate",
+          "persona": "Prospect actively evaluating CompetitorAlpha and asking pointed comparison questions.",
+          "objectives": ["Stay professional", "Highlight differentiators", "Avoid badmouthing competition"],
+          "scoring_methodology": "discovery"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "label": "Negotiation Skills",
+      "min_score": 7.0,
+      "scenarios": [
+        {
+          "name": "Multi-stakeholder Negotiation",
+          "type": "negotiation",
+          "difficulty": "advanced",
+          "persona": "CFO and VP Sales with different priorities - CFO wants discount, VP wants features.",
+          "objectives": ["Balance stakeholder needs", "Protect deal value", "Find creative solutions"],
+          "scoring_methodology": "discovery"
+        },
+        {
+          "name": "Contract Terms Push-back",
+          "type": "negotiation",
+          "difficulty": "intermediate",
+          "persona": "Legal counsel requesting non-standard contract modifications.",
+          "objectives": ["Understand true concerns", "Offer alternatives", "Know when to escalate"],
+          "scoring_methodology": "discovery"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "label": "Closing Techniques",
+      "min_score": 7.0,
+      "scenarios": [
+        {
+          "name": "Stalled Deal Revival",
+          "type": "closing",
+          "difficulty": "advanced",
+          "persona": "Champion who went dark after internal reorg. Deal at risk.",
+          "objectives": ["Re-engage diplomatically", "Identify new blockers", "Create urgency"],
+          "scoring_methodology": "discovery"
+        },
+        {
+          "name": "Executive Close",
+          "type": "closing",
+          "difficulty": "advanced",
+          "persona": "C-level executive with 15 minutes who needs compelling reason to approve purchase.",
+          "objectives": ["Lead with business impact", "Handle rapid-fire questions", "Ask for the business"],
+          "scoring_methodology": "discovery"
+        }
+      ]
+    }
+  ]
+}

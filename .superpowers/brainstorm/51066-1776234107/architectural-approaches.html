@@ -1,0 +1,48 @@
+<h2>Three Architectural Approaches</h2>
+<p class="subtitle">For hierarchical multi-agent orchestration — choose the foundation pattern</p>
+
+<div class="options" data-multiselect>
+  <div class="option" data-choice="A" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Centralized Orchestrator (Hub-and-Spoke)</h3>
+      <p><strong>Single Manager agent</strong> owns all client communication. Receives request → analyzes intent → routes to Specialist → aggregates results → responds to client.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Single point of control — easy to reason about</li><li>Consistent client experience</li><li>Manager can do multi-turn clarification before delegating</li><li>Easy to add new specialists</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Manager is a bottleneck</li><li>Single point of failure</li><li>All traffic flows through one node</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="B" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Hierarchical Tree (Manager → Team Leads → Specialists)</h3>
+      <p><strong>Three-tier hierarchy.</strong> Manager routes to domain Team Leads (Coach Lead, Assistant Lead, etc.) → Leads coordinate their specialist teams → Results bubble up.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Scales better — Manager only talks to ~3-5 Leads</li><li>Domain isolation — Coach team independent from Assistant team</li><li>Leads can parallelize within their domain</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>More complex routing logic</li><li>Extra hop adds latency</li><li>Harder to coordinate cross-domain tasks</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="C" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Blackboard Architecture (Shared State + Orchestrator)</h3>
+      <p><strong>Shared working memory</strong> (the "blackboard") holds request state. Orchestrator manages flow. Specialists read from and write to the blackboard. Orchestrator decides which specialist runs next based on blackboard state.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Maximum flexibility — specialists are decoupled</li><li>Easy to add conditional workflows</li><li>State is always inspectable/debuggable</li><li>Natural fit for iterative refinement</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Blackboard schema becomes critical</li><li>Requires careful state management</li><li>More complex to implement correctly</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 32px;">
+  <h3>My Recommendation</h3>
+  <p><strong>Start with Approach A (Centralized Orchestrator)</strong> for MVP, but <em>design the interfaces</em> to support evolving into Approach C (Blackboard).</p>
+  <p style="margin-top: 8px;">Why: Your current Triage → Coach/Assistant → DAG → Reviewer flow is already a simpler version of A. The Manager agent replaces Triage, and you can incrementally add blackboard patterns without a full rewrite. This gives you a clear migration path.</p>
+</div>
+
+<p style="margin-top: 24px; font-style: italic;">Select any option(s) to indicate interest, then tell me your thoughts in the terminal.</p>

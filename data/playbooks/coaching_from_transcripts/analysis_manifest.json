@@ -1,0 +1,30 @@
+{
+  "analyzed": {
+    "cold_call_stratos_2026-03-01.md": {
+      "analyzed_at": "2026-03-07T19:30:09.950641",
+      "output_file": "coaching_cold_call_stratos_2026-03-01.md",
+      "transcript_size": 3213
+    },
+    "demo_call_velocity_retail_2026-02-20.md": {
+      "analyzed_at": "2026-03-07T19:31:02.796007",
+      "output_file": "coaching_demo_call_velocity_retail_2026-02-20.md",
+      "transcript_size": 4600
+    },
+    "discovery_call_greenfield_2026-02-12.md": {
+      "analyzed_at": "2026-03-07T19:32:04.835386",
+      "output_file": "coaching_discovery_call_greenfield_2026-02-12.md",
+      "transcript_size": 3414
+    },
+    "discovery_call_novatech_2026-02-18.md": {
+      "analyzed_at": "2026-03-07T19:33:20.144394",
+      "output_file": "coaching_discovery_call_novatech_2026-02-18.md",
+      "transcript_size": 6292
+    },
+    "negotiation_call_apex_2026-02-25.md": {
+      "analyzed_at": "2026-03-07T19:34:28.214310",
+      "output_file": "coaching_negotiation_call_apex_2026-02-25.md",
+      "transcript_size": 4966
+    }
+  },
+  "last_run": "2026-03-07T19:34:28.214347"
+}

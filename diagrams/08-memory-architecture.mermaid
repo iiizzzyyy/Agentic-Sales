@@ -1,0 +1,41 @@
+---
+title: "4-Layer Memory Architecture"
+---
+graph TB
+    subgraph L1["Layer 1: CONVERSATION MEMORY"]
+        L1_STORE["LangGraph Checkpointer\n(Postgres / Redis)"]
+        L1_CONTENT["Full message history\nAgent state mid-workflow\nRoleplay scores in progress"]
+        L1_MAP["Slack thread_ts = LangGraph thread_id"]
+        L1_LIFE["Lifetime: Duration of thread/session"]
+    end
+
+    subgraph L2["Layer 2: REP PROFILE MEMORY"]
+        L2_STORE["Postgres / BigQuery"]
+        L2_CONTENT["Skill scores per competency\nWeak areas and coaching history\nPreferred coaching style\nCompleted roleplays and ratings"]
+        L2_MAP["Slack user_id = rep profile record"]
+        L2_LIFE["Lifetime: Persistent (grows over time)"]
+    end
+
+    subgraph L3["Layer 3: TEAM KNOWLEDGE"]
+        L3_STORE["Vector DB\n(Qdrant / Weaviate)"]
+        L3_CONTENT["Playbooks and battle cards\nCall transcripts and best practices\nDeal patterns and win/loss analysis\nICP definitions"]
+        L3_MAP["Accessed via RAG at query time"]
+        L3_LIFE["Lifetime: Persistent, updated on schedule"]
+    end
+
+    subgraph L4["Layer 4: LIVE DATA"]
+        L4_STORE["External APIs via MCP"]
+        L4_CONTENT["Current deal status (HubSpot)\nLatest emails (Gmail)\nFresh analytics (BigQuery)\nCompany news (Web Search)"]
+        L4_MAP["Accessed via MCP tool calls"]
+        L4_LIFE["Lifetime: Real-time / short TTL cache"]
+    end
+
+    L1 ---|per request| AGENT["Agent\nRuntime"]
+    L2 ---|per session start| AGENT
+    L3 ---|per RAG query| AGENT
+    L4 ---|per tool call| AGENT
+
+    style L1 fill:#6B5CE7,color:#fff
+    style L2 fill:#0077B6,color:#fff
+    style L3 fill:#1B4332,color:#fff
+    style L4 fill:#FF6B35,color:#fff

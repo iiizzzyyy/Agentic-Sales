@@ -1,0 +1,182 @@
+[
+  {
+    "id": "novatech_solutions",
+    "properties": {
+      "name": "NovaTech Solutions",
+      "domain": "novatech.io",
+      "industry": "Enterprise Software",
+      "numberofemployees": "250-500",
+      "city": "Austin",
+      "state": "TX",
+      "annualrevenue": "15000000",
+      "description": "NovaTech Solutions is a enterprise software company headquartered in Austin, TX with 250-500 employees.",
+      "createdate": "2025-06-18T06:37:35.657785",
+      "lastmodifieddate": "2026-02-12T06:37:35.657793"
+    }
+  },
+  {
+    "id": "greenfield_analytics",
+    "properties": {
+      "name": "Greenfield Analytics",
+      "domain": "greenfieldanalytics.com",
+      "industry": "Data Analytics",
+      "numberofemployees": "50-100",
+      "city": "Denver",
+      "state": "CO",
+      "annualrevenue": "5000000",
+      "description": "Greenfield Analytics is a data analytics company headquartered in Denver, CO with 50-100 employees.",
+      "createdate": "2025-08-20T06:37:35.657797",
+      "lastmodifieddate": "2026-02-25T06:37:35.657798"
+    }
+  },
+  {
+    "id": "meridian_healthcare",
+    "properties": {
+      "name": "Meridian Healthcare",
+      "domain": "meridianhc.com",
+      "industry": "Healthcare Tech",
+      "numberofemployees": "1000-5000",
+      "city": "Boston",
+      "state": "MA",
+      "annualrevenue": "10000000",
+      "description": "Meridian Healthcare is a healthcare tech company headquartered in Boston, MA with 1000-5000 employees.",
+      "createdate": "2025-07-15T06:37:35.657801",
+      "lastmodifieddate": "2026-03-02T06:37:35.657803"
+    }
+  },
+  {
+    "id": "apex_manufacturing",
+    "properties": {
+      "name": "Apex Manufacturing",
+      "domain": "apexmfg.com",
+      "industry": "Manufacturing",
+      "numberofemployees": "500-1000",
+      "city": "Detroit",
+      "state": "MI",
+      "annualrevenue": "50000000",
+      "description": "Apex Manufacturing is a manufacturing company headquartered in Detroit, MI with 500-1000 employees.",
+      "createdate": "2025-09-21T06:37:35.657805",
+      "lastmodifieddate": "2026-02-03T06:37:35.657807"
+    }
+  },
+  {
+    "id": "cloudbridge_systems",
+    "properties": {
+      "name": "CloudBridge Systems",
+      "domain": "cloudbridge.dev",
+      "industry": "Cloud Infrastructure",
+      "numberofemployees": "100-250",
+      "city": "San Francisco",
+      "state": "CA",
+      "annualrevenue": "10000000",
+      "description": "CloudBridge Systems is a cloud infrastructure company headquartered in San Francisco, CA with 100-250 employees.",
+      "createdate": "2025-10-06T06:37:35.657809",
+      "lastmodifieddate": "2026-02-17T06:37:35.657811"
+    }
+  },
+  {
+    "id": "terralogistics",
+    "properties": {
+      "name": "TerraLogistics",
+      "domain": "terralogistics.com",
+      "industry": "Supply Chain",
+      "numberofemployees": "250-500",
+      "city": "Chicago",
+      "state": "IL",
+      "annualrevenue": "75000000",
+      "description": "TerraLogistics is a supply chain company headquartered in Chicago, IL with 250-500 employees.",
+      "createdate": "2025-05-20T06:37:35.657815",
+      "lastmodifieddate": "2026-03-04T06:37:35.657816"
+    }
+  },
+  {
+    "id": "pinnacle_financial_group",
+    "properties": {
+      "name": "Pinnacle Financial Group",
+      "domain": "pinnaclefg.com",
+      "industry": "Financial Services",
+      "numberofemployees": "500-1000",
+      "city": "New York",
+      "state": "NY",
+      "annualrevenue": "5000000",
+      "description": "Pinnacle Financial Group is a financial services company headquartered in New York, NY with 500-1000 employees.",
+      "createdate": "2025-11-09T06:37:35.657819",
+      "lastmodifieddate": "2026-02-22T06:37:35.657820"
+    }
+  },
+  {
+    "id": "velocity_retail",
+    "properties": {
+      "name": "Velocity Retail",
+      "domain": "velocityretail.co",
+      "industry": "Retail Tech",
+      "numberofemployees": "100-250",
+      "city": "Seattle",
+      "state": "WA",
+      "annualrevenue": "10000000",
+      "description": "Velocity Retail is a retail tech company headquartered in Seattle, WA with 100-250 employees.",
+      "createdate": "2025-07-18T06:37:35.657823",
+      "lastmodifieddate": "2026-02-21T06:37:35.657824"
+    }
+  },
+  {
+    "id": "stratos_energy",
+    "properties": {
+      "name": "Stratos Energy",
+      "domain": "stratosenergy.com",
+      "industry": "Clean Energy",
+      "numberofemployees": "50-100",
+      "city": "Houston",
+      "state": "TX",
+      "annualrevenue": "100000000",
+      "description": "Stratos Energy is a clean energy company headquartered in Houston, TX with 50-100 employees.",
+      "createdate": "2025-05-13T06:37:35.657827",
+      "lastmodifieddate": "2026-02-12T06:37:35.657828"
+    }
+  },
+  {
+    "id": "horizon_education",
+    "properties": {
+      "name": "Horizon Education",
+      "domain": "horizonedu.org",
+      "industry": "EdTech",
+      "numberofemployees": "50-100",
+      "city": "Portland",
+      "state": "OR",
+      "annualrevenue": "25000000",
+      "description": "Horizon Education is a edtech company headquartered in Portland, OR with 50-100 employees.",
+      "createdate": "2025-03-13T06:37:35.657831",
+      "lastmodifieddate": "2026-02-28T06:37:35.657832"
+    }
+  },
+  {
+    "id": "dataflow_inc",
+    "properties": {
+      "name": "DataFlow Inc",
+      "domain": "dataflow.io",
+      "industry": "Data Infrastructure",
+      "numberofemployees": "100-250",
+      "city": "San Jose",
+      "state": "CA",
+      "annualrevenue": "20000000",
+      "description": "DataFlow Inc provides real-time data pipeline solutions for enterprise customers, specializing in streaming analytics and ETL automation.",
+      "createdate": "2025-09-15T10:30:00.000000",
+      "lastmodifieddate": "2026-03-10T14:22:00.000000"
+    }
+  },
+  {
+    "id": "quantumleap_ai",
+    "properties": {
+      "name": "QuantumLeap AI",
+      "domain": "quantumleap.ai",
+      "industry": "Artificial Intelligence",
+      "numberofemployees": "50-100",
+      "city": "Palo Alto",
+      "state": "CA",
+      "annualrevenue": "8000000",
+      "description": "QuantumLeap AI is an AI-first startup focused on predictive analytics and machine learning solutions for mid-market companies.",
+      "createdate": "2025-11-02T08:15:00.000000",
+      "lastmodifieddate": "2026-03-12T09:45:00.000000"
+    }
+  }
+]

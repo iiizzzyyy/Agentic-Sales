@@ -1,0 +1,78 @@
+{
+  "thread_id": "thread_velocity_003",
+  "subject": "Re: Velocity Retail — Transition & Next Steps",
+  "associations": {
+    "company_id": "velocity_retail",
+    "deal_id": "deal_831953",
+    "contact_ids": ["contact_894444"]
+  },
+  "participants": [
+    {
+      "name": "Taylor Chen",
+      "email": "taylor.chen@ourcompany.com",
+      "role": "rep"
+    },
+    {
+      "name": "Wei Kim",
+      "email": "wei.kim@velocityretail.co",
+      "role": "prospect"
+    },
+    {
+      "name": "Lisa Tran",
+      "email": "lisa.tran@velocityretail.co",
+      "role": "prospect"
+    }
+  ],
+  "messages": [
+    {
+      "from": "wei.kim@velocityretail.co",
+      "to": [
+        "taylor.chen@ourcompany.com"
+      ],
+      "cc": [],
+      "date": "2026-03-14T08:30:00Z",
+      "body": "Taylor,\n\nI have some news — I'm leaving Velocity Retail at the end of March. I've accepted a VP role elsewhere.\n\nI know we're in the middle of the deal. I want to make sure this doesn't stall. A few things:\n\n1. My replacement, Jake Martinez, starts April 1. There's a 2-week gap but Lisa Tran (copied here) can be your interim contact. She's been looped in on our conversations.\n\n2. The contract is with legal and should be back by March 20. If you can push to get it signed before I leave, that would be ideal.\n\n3. I've briefed our CFO on the deal and he's supportive. The budget is secured.\n\nI'm happy to do a transition call with Jake once he starts, but I won't be able to stay involved after March 31.\n\nSorry for the timing — these things happen.\n\nWei"
+    },
+    {
+      "from": "taylor.chen@ourcompany.com",
+      "to": [
+        "wei.kim@velocityretail.co",
+        "lisa.tran@velocityretail.co"
+      ],
+      "cc": [],
+      "date": "2026-03-14T10:15:00Z",
+      "body": "Wei,\n\nCongratulations on the new role — that's exciting for you!\n\nThank you for the heads-up and for setting up the transition. Here's what I'm thinking:\n\n**Priority: Close before you leave (March 31)**\n- If legal can return comments by March 20, we can turn redlines around in 24 hours\n- Target signature by March 28\n- You'd be able to hand off a signed deal to Jake, which makes his onboarding much easier\n\n**Backup plan: Transition to Jake**\n- Happy to do an intro call once he starts\n- Lisa — would you be able to join that call to provide continuity?\n- I'll prepare a summary doc covering our conversations, the proposal, and implementation timeline\n\nLisa — I'm copying you on all future emails. I know you've been involved, but just to formally loop you in: we're at the negotiation stage with legal review in progress. The contract value is $24K/year and implementation was targeting early April.\n\nWei — can we schedule a 15-minute call Monday to discuss strategy for closing before your departure?\n\nTaylor"
+    },
+    {
+      "from": "wei.kim@velocityretail.co",
+      "to": [
+        "taylor.chen@ourcompany.com"
+      ],
+      "cc": [
+        "lisa.tran@velocityretail.co"
+      ],
+      "date": "2026-03-14T11:00:00Z",
+      "body": "Taylor,\n\nMonday works — I'm free at 3pm PT.\n\nI want to close this before I leave too. I've invested a lot of time in this evaluation and I believe it's the right solution for our team. It would feel incomplete to hand it off unsigned.\n\nLet me reach out to legal today and see if I can accelerate their review. Our legal team is small so sometimes a personal nudge helps.\n\nWei"
+    },
+    {
+      "from": "lisa.tran@velocityretail.co",
+      "to": [
+        "taylor.chen@ourcompany.com",
+        "wei.kim@velocityretail.co"
+      ],
+      "cc": [],
+      "date": "2026-03-14T14:30:00Z",
+      "body": "Taylor, Wei,\n\nThanks for including me. I've been following this deal and I'm supportive — Wei walked me through the demo recordings and the ROI analysis.\n\nA few things from my end:\n\n1. I can be the interim contact until Jake starts. I'm not as deep on the details as Wei, but I can keep things moving.\n\n2. I'll join the Monday call if helpful — just send me an invite.\n\n3. One concern: if we sign before Wei leaves, who handles implementation kickoff? Jake won't be up to speed yet.\n\nTaylor — can you walk me through how implementation typically works when there's a contact transition? I want to make sure nothing falls through the cracks.\n\nLisa"
+    },
+    {
+      "from": "taylor.chen@ourcompany.com",
+      "to": [
+        "lisa.tran@velocityretail.co",
+        "wei.kim@velocityretail.co"
+      ],
+      "cc": [],
+      "date": "2026-03-14T16:00:00Z",
+      "body": "Lisa,\n\nGreat question — we handle transitions all the time. Here's how it would work:\n\n**Week 1 (Late March):** Wei does kickoff call with our CSM, provides context on team, goals, current state\n\n**Week 2 (Early April):** Lisa acts as interim contact for initial configuration — this is mostly our team doing setup work, minimal input needed from you\n\n**Week 3 (Mid-April):** Jake is onboarded. We do a fresh introduction call with him plus a recorded handoff from Wei covering the \"why\" behind the purchase\n\n**Week 4:** Team training and go-live\n\nWe'll document everything so Jake doesn't start from scratch. Our CSM will maintain a shared implementation doc that captures decisions and context.\n\nDoes that work? I've seen this pattern succeed many times.\n\nI'll send the Monday call invite shortly — 3pm PT, 30 minutes.\n\nTaylor"
+    }
+  ]
+}

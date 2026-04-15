@@ -1,0 +1,49 @@
+---
+title: "Deployment Architecture - GCP Self-Hosted"
+---
+graph TB
+    subgraph GCP["Google Cloud Platform"]
+        subgraph COMPUTE["Cloud Run / GKE"]
+            APP["FastAPI + Slack Bolt\n+ LangGraph Runtime\n+ MCP Clients"]
+        end
+
+        subgraph DATA["Data Layer"]
+            CSQL["Cloud SQL (Postgres)\nCheckpoints\nRep profiles\nApp state"]
+            MEMSTORE["Memorystore (Redis)\nSession cache\nRate limiting"]
+        end
+
+        subgraph GOOGLE_APIS["Google APIs - same project"]
+            BQ_API["BigQuery API"]
+            GMAIL_API["Gmail API"]
+            GEMINI_API["Gemini API\n(Vertex AI)"]
+        end
+    end
+
+    subgraph EXTERNAL["External Services"]
+        QDRANT["Qdrant Cloud\nVector DB + RAG"]
+        CLAUDE_API["Claude API\n(Anthropic)"]
+        TAVILY["Tavily API\nWeb Search"]
+        HUBSPOT_API["HubSpot API"]
+        COHERE_API["Cohere API\nReranking"]
+        VOYAGE_API["Voyage AI\nEmbeddings"]
+    end
+
+    SLACK_EXT["Slack\nEvents API"] -->|webhooks| APP
+
+    APP --> CSQL
+    APP --> MEMSTORE
+    APP --> BQ_API
+    APP --> GMAIL_API
+    APP --> GEMINI_API
+    APP --> QDRANT
+    APP --> CLAUDE_API
+    APP --> TAVILY
+    APP --> HUBSPOT_API
+    APP --> COHERE_API
+    APP --> VOYAGE_API
+
+    style GCP fill:#4285F4,color:#fff
+    style EXTERNAL fill:#2D3436,color:#fff
+    style COMPUTE fill:#0F9D58,color:#fff
+    style DATA fill:#DB4437,color:#fff
+    style GOOGLE_APIS fill:#F4B400,color:#000

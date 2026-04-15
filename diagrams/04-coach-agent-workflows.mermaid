@@ -1,0 +1,51 @@
+---
+title: "Coach Agent - Detailed Workflow Graph"
+---
+graph TB
+    START((Start)) --> CLASSIFY_REQ["Classify Request Type"]
+    CLASSIFY_REQ --> LOAD_PROFILE["Load Rep Profile\n(Postgres/BigQuery)"]
+    LOAD_PROFILE --> CHOOSE{Choose Workflow}
+
+    CHOOSE -->|roleplay request| RP_START["ROLEPLAY WORKFLOW"]
+    CHOOSE -->|call feedback| PC_START["POST-CALL FEEDBACK"]
+    CHOOSE -->|meeting prep| PREP_START["PREP WORKFLOW"]
+
+    subgraph ROLEPLAY["Roleplay Workflow"]
+        RP_START --> RP_RAG["RAG: Pull ICP,\nobjections, battle cards"]
+        RP_RAG --> RP_PERSONA["Generate Buyer Persona\nClaude Sonnet 4.5"]
+        RP_PERSONA --> RP_BUYER["Generate Buyer Response"]
+        RP_BUYER --> RP_SEND["Send to Slack as Buyer"]
+        RP_SEND --> RP_WAIT["WAIT for Rep Reply\nDurable execution:\ngraph pauses, state persists"]
+        RP_WAIT --> RP_SCORE["Score Rep Turn\nClaude Sonnet 4.5"]
+        RP_SCORE --> RP_CHECK{More turns?}
+        RP_CHECK -->|yes| RP_BUYER
+        RP_CHECK -->|no| RP_DEBRIEF["Generate Final Debrief\nScores + Action Items"]
+    end
+
+    subgraph POSTCALL["Post-Call Feedback"]
+        PC_START --> PC_RAG1["RAG: Pull call\ntranscript/notes"]
+        PC_RAG1 --> PC_RAG2["RAG: Pull playbook\nscoring criteria"]
+        PC_RAG2 --> PC_SCORE["Score Against Rubric\nClaude Sonnet 4.5"]
+        PC_SCORE --> PC_ACTIONS["Generate Action Items"]
+        PC_ACTIONS --> PC_UPDATE["Update Rep Skill Profile"]
+    end
+
+    subgraph MEETPREP["Meeting Prep"]
+        PREP_START --> PREP_HS["HubSpot: Get Deal\n+ Contact History"]
+        PREP_HS --> PREP_RAG["RAG: Pull Playbook\nSection"]
+        PREP_RAG --> PREP_WEB["Web Search: Company\nNews + Intel"]
+        PREP_WEB --> PREP_BQ["BigQuery: Historical\nDeal Patterns"]
+        PREP_BQ --> PREP_GEN["Generate Prep Brief\nClaude Sonnet 4.5"]
+    end
+
+    RP_DEBRIEF --> UPDATE_PROFILE
+    PC_UPDATE --> UPDATE_PROFILE
+    PREP_GEN --> FORMAT
+
+    UPDATE_PROFILE["Update Rep Profile\n(Postgres/BigQuery)"] --> FORMAT["Format and Return\nto Slack"]
+    FORMAT --> END_NODE((End))
+
+    style ROLEPLAY fill:#6B5CE7,color:#fff
+    style POSTCALL fill:#8B5CF6,color:#fff
+    style MEETPREP fill:#A78BFA,color:#fff
+    style RP_WAIT fill:#FF6B35,color:#fff
